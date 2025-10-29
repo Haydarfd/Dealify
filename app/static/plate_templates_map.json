@@ -1,0 +1,130 @@
+{
+  "abudhabi_motorcycle.png": {
+    "size": [1200, 800],
+    "safeBox": [350, 380, 500, 120],
+    "singleLine": true,
+    "fontSize": 160,
+    "fontColor": "black",
+    "alignment": "center"
+  },
+  "abudhabi_private.png": {
+    "size": [1200, 800],
+    "safeBox": [100, 300, 1000, 280],
+    "singleLine": true,
+    "fontSize": 200,
+    "fontColor": "black",
+    "alignment": "center"
+  },
+  "ajman_motorcycle.png": {
+    "size": [1200, 800],
+    "safeBox": [350, 380, 500, 120],
+    "singleLine": true,
+    "fontSize": 180,
+    "fontColor": "black",
+    "alignment": "center"
+  },
+  "ajman_private.png": {
+    "size": [1200, 800],
+    "safeBox": [200, 260, 800, 200],
+    "singleLine": true,
+    "fontSize": 180,
+    "fontColor": "black",
+    "alignment": "center"
+  },
+  "dubai_classic.png": {
+    "size": [1200, 800],
+    "safeBox": [200, 280, 800, 280],
+    "singleLine": true,
+    "fontSize": 180,
+    "fontColor": "white",
+    "alignment": "center"
+  },
+  "dubai_motorcycle.png": {
+    "size": [1200, 800],
+    "safeBox": [350, 380, 500, 120],
+    "singleLine": true,
+    "fontSize": 180,
+    "fontColor": "black",
+    "alignment": "center"
+  },
+  "dubai_private.png": {
+    "size": [1200, 800],
+    "safeBox": [200, 240, 800, 280],
+    "singleLine": true,
+    "fontSize": 200,
+    "fontColor": "black",
+    "alignment": "center"
+  },
+  "fujairah_motorcycle.png": {
+    "size": [1200, 800],
+    "safeBox": [350, 380, 500, 120],
+    "singleLine": true,
+    "fontSize": 180,
+    "fontColor": "black",
+    "alignment": "center"
+  },
+  "fujairah_private.png": {
+    "size": [1200, 800],
+    "safeBox": [200, 260, 800, 200],
+    "singleLine": true,
+    "fontSize": 180,
+    "fontColor": "black",
+    "alignment": "center"
+  },
+  "raskhaimah_motorcycle.png": {
+    "size": [1200, 800],
+    "safeBox": [350, 380, 500, 120],
+    "singleLine": true,
+    "fontSize": 180,
+    "fontColor": "black",
+    "alignment": "center"
+  },
+  "raskhaimah_private.png": {
+    "size": [1200, 800],
+    "safeBox": [100, 320, 1000, 240],
+    "singleLine": true,
+    "fontSize": 180,
+    "fontColor": "black",
+    "alignment": "center"
+  },
+  "sharjah_classic.png": {
+    "size": [1200, 800],
+    "safeBox": [200, 280, 800, 280],
+    "singleLine": true,
+    "fontSize": 180,
+    "fontColor": "white",
+    "alignment": "center"
+  },
+  "sharjah_motorcycle.png": {
+    "size": [1200, 800],
+    "safeBox": [350, 380, 500, 120],
+    "singleLine": true,
+    "fontSize": 180,
+    "fontColor": "black",
+    "alignment": "center"
+  },
+  "sharjah_private.png": {
+    "size": [1200, 800],
+    "safeBox": [200, 380, 800, 240],
+    "singleLine": true,
+    "fontSize": 180,
+    "fontColor": "black",
+    "alignment": "center"
+  },
+  "ummalquwain_motorcycle.png": {
+    "size": [1200, 800],
+    "safeBox": [350, 380, 500, 120],
+    "singleLine": true,
+    "fontSize": 180,
+    "fontColor": "black",
+    "alignment": "center"
+  },
+  "ummalquwain_private.png": {
+    "size": [1200, 800],
+    "safeBox": [200, 260, 800, 200],
+    "singleLine": true,
+    "fontSize": 160,
+    "fontColor": "black",
+    "alignment": "center"
+  }
+}

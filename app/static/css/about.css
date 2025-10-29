@@ -1,0 +1,301 @@
+/* Change City Button Styles */
+.change-city-item {
+    border-top: 1px solid #e2e8f0;
+    margin-top: 10px;
+    padding-top: 10px;
+}
+
+.change-city-link {
+    display: block;
+    padding: 12px 20px;
+    background: #f8fafc;
+    color: #2d3748;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    border-radius: 8px;
+    margin: 0 10px;
+    text-align: center;
+}
+
+.change-city-link:hover {
+    background: #0cc4e9;
+    color: white;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(12, 196, 233, 0.3);
+}
+
+/* Mobile responsive adjustments */
+@media (max-width: 768px) {
+    .change-city-link {
+        padding: 10px 16px;
+        margin: 0 8px;
+        font-size: 0.95rem;
+    }
+}
+
+/* RTL support for Arabic */
+[dir="rtl"] .change-city-link {
+    text-align: center;
+}
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff;
+  overflow-x: hidden;
+  height: 100%;
+  }
+main {
+  
+      background-color: white;
+
+    margin: 0;
+    padding: 0;
+    color: #333;
+    line-height: 1.6;
+   /*background-image: url('../img/Visual\ identity\ \ Dealify-01_page-0004.jpg');*/
+}
+*:not(.navbar):not(.navbar *):not(.offer-bar):not(.offer-bar *) {
+    box-sizing: border-box;
+}
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: transparent !important;  /* Transparent background */
+  padding: 10px 20px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 999;
+  box-sizing: border-box;
+  border-bottom: none !important;
+  box-shadow: none !important;
+}
+
+/* Back Button */
+.back-btn img {
+  height: 30px;
+  filter: brightness(0) saturate(100%) invert(50%) sepia(90%) saturate(600%) hue-rotate(150deg); /* turns white icon blue */
+}
+.navbar,
+.navbar * {
+  color: #0cc4e9 !important; /* Force Dealify blue */
+}
+
+.nav-links a,
+.nav-links a:visited,
+.navbar-end span,
+.navbar-end a,
+.dropdown-icon {
+  color: #0cc4e9 !important;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+
+/* Center nav links */
+.nav-center {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 24px;
+}
+
+.nav-center a,
+.nav-links a {
+  color: #0cc4e9;
+  font-weight: bold;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+/* User Info */
+.navbar-end {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.navbar-end span,
+.navbar-end a,
+.navbar-end img {
+  color: #0cc4e9;
+}
+
+/* Dropdown Icon */
+.dropdown-icon {
+  color: #0cc4e9;
+}
+
+/* Optional: Mega Dropdown */
+.mega-dropdown-content {
+  background-color: #f5f5f5;
+  border: 1px solid #ccc;
+}
+
+.mega-dropdown-content a {
+  color: #0cc4e9;
+}
+
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+}
+.hero {
+    text-align: center;
+    padding: 50px 20px;
+    
+}
+.hero img {
+    max-width: 100%;
+    height: 60px; /* Reduced from 100px */
+}
+
+.hero h1 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    color: #979492; /* grey */
+    font-style: bold;
+    font-family: 'Poppins', sans-serif;
+  	display: none;
+
+
+}
+.hero p {
+    color: #0cc4e9; /* light blue */
+    font-style: bold;
+    font-family: 'Poppins', sans-serif;
+
+}
+.section {
+  padding: 40px 20px;
+  flex: 1 1 calc(33% - 20px);
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  background-color: #979492;
+  margin-bottom: 12px;
+  transition: background-color 0.3s ease, transform 0.2s ease; /* 🔥 smooth animation */
+}
+
+.section:hover {
+  background-color: #8d8a87; /* 🔁 slightly darker grey */
+  transform: translateY(-4px); /* 👆 gentle lift */
+}
+
+.section h2 {
+    font-size: 1.1em;
+    margin-bottom: 20px;
+    color: #0cc4e9;
+    font-style: bold;
+    font-family: 'Poppins', sans-serif;
+
+}
+.section p {
+    margin-bottom: 20px;
+    font-size: 1em;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+
+}
+.why-choose {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+
+.why-choose .card {
+  background-color: #ffffff;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  min-height: 160px;         /* ✅ Uniform height */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.why-choose .card:hover {
+  background-color: #f0f0f0;
+  transform: translateY(-5px);
+  box-shadow: 0 8px 24px rgba(12, 196, 233, 0.15);
+}
+
+.why-choose .card h3 {
+  color: #0cc4e9;
+  font-family: 'Poppins', sans-serif;
+  font-size: 17px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.why-choose .card p {
+  color: #333;
+  font-family: 'Poppins', sans-serif;
+  font-size: 15px;
+  line-height: 1.5;
+  flex-grow: 1;
+}
+
+
+.join-us {
+    text-align: center;
+    background: #e9ecef;
+    padding: 50px 20px;
+  	border-radius: 8px;
+}
+
+.join-us a {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 20px;
+  background: #0cc4e9;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 999px;
+  font-family: 'Poppins', sans-serif;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.join-us a:hover {
+  background: #0aa8c7;
+  transform: translateY(-2px);
+}
+
+.page-slide-in {
+  animation: slideInRight 0.3s ease forwards;
+}
+
+.page-slide-out {
+  animation: slideOutLeft 0.3s ease forwards;
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideOutLeft {
+  from {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+}
+

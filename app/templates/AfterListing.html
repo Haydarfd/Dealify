@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  	<meta name="theme-color" content="#ffffff">
+  	<meta name="apple-mobile-web-app-capable" content="yes">
+ 	<meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="mobile-web-app-capable" content="yes">
+	<meta name="msapplication-navbutton-color" content="#ffffff">
+	<meta name="apple-mobile-web-app-title" content="Dealify">
+    <title>Listing Confirmation</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/AfterListing.css', v='1.3.6') }}">
+  	<!-- Main favicon for all browsers -->
+<link rel="icon" href="/static/img/favicon.ico" type="image/x-icon" />
+<!-- Open Graph for WhatsApp, Facebook, LinkedIn -->
+<meta property="og:title" content="Dealify - Buy & Sell Securely" />
+<meta property="og:description" content="Discover trusted listings and secure payments on Dealify." />
+<meta property="og:image" content="https://dealify.ae/static/img/shareimg.png" />
+<meta property="og:url" content="https://dealify.ae" />
+<meta property="og:type" content="website" />
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Dealify - Buy & Sell Securely" />
+<meta name="twitter:description" content="Discover trusted listings and secure payments on Dealify." />
+<meta name="twitter:image" content="https://dealify.ae/static/img/shareimg.png" />
+
+</head>
+<body>
+<div class="page-wrapper">
+    <div class="confirmation-container">
+        <div class="checkmark">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+            </svg>
+        </div>
+        
+        <h1 data-en="Your listing is live!" data-ar="!تم نشر إعلانك">Your listing is live!</h1>
+
+<p data-en="Congratulations! Your item has been successfully listed in our marketplace. It's now visible to thousands of potential buyers."
+   data-ar="تهانينا! تم نشر إعلانك بنجاح في السوق. يمكن الآن للآلاف من المشترين المحتملين رؤيته">
+   Congratulations! Your item has been successfully listed in our marketplace. It's now visible to thousands of potential buyers.
+</p>
+
+<div class="listing-preview">
+    <p>
+        <strong data-en="Pro tip :" data-ar="نصيحة :" >Pro tip :</strong>
+        <span data-en="Share your listing on social media to reach more buyers!" 
+              data-ar="!شارك إعلانك على وسائل التواصل الاجتماعي للوصول إلى مزيد من المشترين">
+              Share your listing on social media to reach more buyers!
+        </span>
+    </p>
+</div>
+
+<div class="button-group">
+    <a href="{{ url_for('index') }}" class="btn btn-primary">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+        <span data-en="Continue Shopping" data-ar="تابع التسوق">Continue Shopping</span>
+    </a>
+
+    <a href="{{ url_for('listing') }}" class="btn btn-outline">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 19V5M5 12l7-7 7 7"/>
+        </svg>
+        <span data-en="Sell Another Item" data-ar="أضف إعلانًا آخر">Sell Another Item</span>
+    </a>
+</div>
+
+</section>
+  
+<script src="{{ url_for('static', filename='js/AfterListing.js') }}"></script>
+ 
+</body>
+</html>

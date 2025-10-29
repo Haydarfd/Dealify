@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dealify Verify OTP</title>
+    <style>
+        /* Hidden reCAPTCHA container */
+        #recaptcha-container {
+            position: absolute;
+            top: -10000px;
+            left: -10000px;
+        }
+        
+        /* Error message styling */
+        .error-message {
+            color: red;
+            margin: 5px 0;
+            font-size: 14px;
+        }
+        
+        /* Form container styling */
+        .form-container {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
+  <main>
+    <div class="container">
+      <div class="form-container">
+        <h1 data-en="Verify Phone Number" data-ar="تحقق من رقم الهاتف">Verify Phone Number</h1>
+        <p data-en="Enter the 6-digit code sent to your phone" data-ar="أدخل الرمز المكون من 6 أرقام المرسل إلى هاتفك">Enter the 6-digit code sent to your phone</p>
+
+        <form id="verifyOtpForm">
+          <input type="text" 
+                 id="otpInput" 
+                 placeholder="Enter OTP"
+                 data-en="Enter OTP"
+                 data-ar="أدخل الرمز"
+                 maxlength="6"
+                 required>
+          <div id="otp-error" class="error-message"></div>
+
+          <button type="button" id="verify-otp-btn" data-en="Verify OTP" data-ar="تحقق من الرمز">Verify OTP</button>
+          
+          <p>
+            <span data-en="Didn't receive code?" data-ar="لم تستلم الرمز؟">Didn't receive code?</span>
+            <a href="#" id="resend-otp" data-en="Resend OTP" data-ar="إعادة إرسال الرمز">Resend OTP</a>
+          </p>
+        </form>
+        
+        {% with messages = get_flashed_messages(with_categories=true) %}
+          {% if messages %}
+            {% set category, message = messages[-1] %}
+            <div class="flash-message {{ category }}">{{ message }}</div>
+          {% endif %}
+        {% endwith %}
+      </div>
+    </div>
+  </main>
+
+  <!-- Hidden reCAPTCHA container -->
+  <div id="recaptcha-container"></div>
+
+  <!-- Firebase and other scripts -->
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+  <script src="{{ url_for('static', filename='js/navscript.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/verifyOtp.js') }}"></script>
+
+
+  
+</body>
+</html>

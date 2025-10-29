@@ -1,0 +1,763 @@
+/* General Reset */
+body, input, button, select, textarea, label {
+  font-family: 'Poppins', sans-serif !important;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+input:focus, select:focus, textarea:focus {
+  outline: none; /* Remove default blue shadow */
+  border: 2px solid #979492 !important; /* Your color */
+  box-shadow: 0 0 0 1.5px #979492;
+}
+
+/* Full Solid Blue Background */
+body {
+  background-color: #00c4e9;
+  color: white;
+  min-height: 100vh;
+  width: 100%;
+  overflow-x: hidden;
+  padding-top: 45px;
+}
+
+html, body {
+  width: 100%;
+  overflow-x: hidden;
+}
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: transparent !important;  /* Transparent background */
+  padding: 10px 20px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 999;
+  box-sizing: border-box;
+  border-bottom: none !important;
+  box-shadow: none !important;
+}
+
+
+/* LEFT: Back Button */
+.back-btn {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+/* CENTER: Links in a container with absolute center */
+.nav-center {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 24px;
+}
+
+/* Nav Link Styling */
+.nav-center a {
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+/* RIGHT: User info */
+.navbar-end {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+
+/* Container */
+.container {
+  width: 100%;
+  max-width: 430px;
+  margin: 0 auto;
+  padding: 0 10px;
+  background: transparent;
+  box-shadow: none;
+  border-radius: 0;
+  padding-bottom: 90px;
+}
+
+/* Input Group Layout */
+.input-group {
+  margin-bottom: 18px;
+  text-align: left;
+}
+
+.input-group label {
+  display: block;
+  font-weight: bold;
+  color: white;
+  margin-bottom: 7px;
+  font-size: 1.07rem;
+}
+
+.input-group label[for="description"] {
+  margin-top: 22px;
+}
+
+.required-note {
+  font-size: 0.75rem;
+  color: #ffffff; 
+  font-weight: normal;
+}
+
+.container h1,
+.container p {
+  text-align: center;
+  display: block;
+  width: 100%;
+}
+
+/* All Inputs, Selects, Textareas */
+input,
+select,
+textarea {
+  width: 100%;
+  min-height: 44px;
+  padding: 0 14px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 6px;
+  background: #fff;
+  color: #333;
+  font-weight: bold;
+  margin-bottom: 0;
+  box-sizing: border-box;
+}
+
+input[type="file"] {
+  padding: 8px 0;
+}
+
+input::placeholder, textarea::placeholder {
+  color: #888;
+}
+
+/* Price Wrapper for AED label */
+.price-wrapper {
+  position: relative;
+}
+.currency-label {
+  position: absolute;
+  top: 50%;
+  right: 16px;
+  transform: translateY(-50%);
+  color: #666;
+  font-weight: bold;
+  pointer-events: none;
+  font-size: 1.06rem;
+}
+.price-wrapper input {
+  padding-right: 52px;
+}
+.description-field select {
+  line-height: normal;          /* Normalize height */
+  vertical-align: middle;       /* Align better with labels */
+  height: 32px;                 /* Match input height (if needed) */
+  flex: 2;                      /* Let it stretch like inputs */
+}
+
+.description-field input[type="text"] {
+  height: 32px;
+}
+
+.currency-label {
+  display: flex;
+  align-items: center;
+  padding-left: 8px;
+}
+
+.currency-label svg.aed-icon {
+  height: 0.9em !important;
+  width: auto !important;
+  vertical-align: middle !important;
+  fill: #0cc4e9 !important;
+  stroke: #0cc4e9 !important;
+  stroke-width: 7 !important;
+}
+
+
+
+/* Description Box */
+#description-box {
+  background: #fff;
+  border-radius: 6px;
+  box-shadow: 0 2px 7px 0 rgba(8,52,109,0.07);
+  margin: 1px 0 20px 0;
+  padding: 17px 14px 17px 14px;
+  border: 1px solid #e9e9e9;
+  width: 100%;
+  max-width: 100%;
+  min-height: 60px;
+  transition: box-shadow 0.14s;
+  box-sizing: border-box;
+}
+
+/* Dynamic fields inside descFields */
+#descFields {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+#descFields .description-field {
+  display: flex;
+  align-items: center;
+  margin-bottom: 4px;
+  gap: 5px;
+}
+
+#descFields .label-text {
+  font-weight: 600;
+  font-size: 0.97rem;
+  color: #223045;
+  min-width: 120px;
+  max-width: 180px;
+  flex: 1.3;
+  text-align: left;
+}
+
+
+
+#descFields input[type="text"],
+.description-field select {
+  flex: 1 1 55%;
+  width: 100%;
+  max-width: 200px;
+  min-width: 70px;
+  font-size: 0.97rem;
+  height: 32px;
+  padding: 4px 10px;
+  border-radius: 6px;
+  border: 2px solid #0cc4e9;
+  background: #ffffff;
+  color: #000 !important;
+  font-weight: 500;
+  box-sizing: border-box;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+.description-field select:valid {
+  color: #000; /* Switch to black when real option is selected */
+}
+
+#descFields input[type="text"]:focus {
+  border: 1.5px solid #979492;
+}
+
+
+/* File Upload - match style */
+#image-upload-area {
+  background: white;
+  color: #0cc4e9;
+  text-align: center;
+  padding: 14px;
+  border: 2px dashed #0cc4e9;
+  border-radius: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px; /* space between text and icon */
+}
+
+
+#image-upload-area:hover {
+  background: #f2faff;
+}
+#image-upload-area .upload-icon {
+  width: 18px;
+  height: 18px;
+}
+#image-preview {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 per row */
+  gap: 14px;
+  padding: 20px 0;
+}
+
+.preview-thumb {
+  position: relative;
+  width: 100%;               /* ✅ fills the grid cell */
+  aspect-ratio: 1;           /* ✅ keeps it square (95x95 ratio) */
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid #ccc;
+  background: white;
+  box-sizing: border-box;
+}
+
+
+.preview-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.remove-image-btn {
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  background: none !important;
+  border: none !important;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  width: 22px;
+  height: 22px;
+  outline: none;
+}
+
+/* Prevent white circle or highlight on hover/focus */
+.remove-image-btn:focus,
+.remove-image-btn:hover,
+.remove-image-btn:active {
+  background: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+  border: none !important;
+}
+
+.remove-image-btn img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  pointer-events: none;
+}
+
+
+.credit-box {
+  background-color: white;
+  color: #0Cc4e9;
+  padding: 10px 20px;
+  border-radius: 12px;
+  text-align: center;
+  font-weight: 600;
+  width: fit-content;
+  margin: 0 auto 15px auto;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+
+#image-limit-hint {
+  margin-top: -10px; /* <-- reduce more aggressively */
+  font-size: 13px;
+  font-weight: bold;
+  color: #000000;
+  text-align: center;
+  width: 100%;
+  display: block;
+}
+
+
+.category-cost-text {
+  display: inline-block;
+  background-color: #fa5391;
+  color: #ffffff;
+  padding: 4px 10px;           /* smaller padding */
+  border-radius: 999px;         /* smaller pill shape */
+  font-size: 0.75rem;          /* smaller text */
+  font-weight: 600;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+}
+
+
+.category-cost-wrapper {
+  text-align: center;
+  margin-top: 8px;
+  margin-bottom: 12px;
+}
+
+
+/* Button */
+button {
+  width: 100%;
+  padding: 14px;
+  background-color: #fa5391;
+  color: white;
+  border: none;
+  border-radius: 999px;
+  margin-top: 17px;
+  cursor: pointer;
+  transition: 0.3s;
+  font-size: 18px;
+  font-weight: bold;
+}
+button:hover {
+  background-color: #ffffff;
+  color: #0cc4e9;
+}
+
+.description-field select {
+  height: 32px !important;
+  padding: 4px 10px !important;
+  line-height: 1.4;
+  font-size: 0.97rem;
+  font-weight: 500;
+  border: 2px solid #0cc4e9;
+  border-radius: 6px;
+  background: #ffffff;
+  color: #000;
+  box-sizing: border-box;
+  vertical-align: middle;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg%20width%3D%2210%22%20height%3D%226%22%20viewBox%3D%220%200%2010%206%22%20xmlns%3D%22http://www.w3.org/2000/svg%22%3E%3Cpath%20d%3D%22M0%200l5%206%205-6z%22%20fill%3D%22%23000%22/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 10px 6px;
+}
+
+.input-group select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  padding: 12px 14px;
+  min-height: 44px;
+  line-height: 1.3;
+  vertical-align: middle;
+  border-radius: 6px;
+  font-size: 1rem;
+  background-image: url("data:image/svg+xml,%3Csvg%20width%3D%2210%22%20height%3D%226%22%20viewBox%3D%220%200%2010%206%22%20xmlns%3D%22http://www.w3.org/2000/svg%22%3E%3Cpath%20d%3D%22M0%200l5%206%205-6z%22%20fill%3D%22%23000%22/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  background-size: 10px 6px;
+}
+
+
+select {
+  -webkit-text-size-adjust: 100%;
+}
+
+
+.language-switcher-container {
+  margin-bottom: 1600px !important;   /* Raise it higher off the bottom */
+  text-align: left;
+  padding-left: 0px;
+}
+
+
+#languageLabel #languageText {
+  color: white !important;
+  margin-left: 10px !important;
+  display: inline-block !important;
+}
+
+
+
+  
+@media (max-width: 600px) {
+  .container {
+    max-width: 100%;
+    padding: 0 28px;
+    margin: 0 auto;
+    box-sizing: border-box;
+    padding-bottom: 90px;
+  }
+
+  #description-box {
+    padding: 10px 8px;
+    max-width: 100%;
+  }
+
+  #descFields .description-field {
+    display: flex;
+    flex-direction: row;     /* Place label and input side by side */
+    align-items: center;     /* Align vertically */
+    gap: 4px;                /* Space between label and input */
+    margin-bottom: 8px;     /* Breathing room between rows */
+  }
+  #descFields .label-text {
+    min-width: 105px;        /* Good minimum for mobile */
+    max-width: 46vw;         /* Prevents label being too wide */
+    font-size: 1rem;
+    margin-bottom: 0;
+    text-align: left;
+    flex: 1 1 45%;
+    white-space: normal;     /* Allow wrap if label is long */
+  }
+  #descFields input[type="text"] {
+    width: 100%;
+    max-width: 200px;
+    min-width: 70px;
+    min-height: 0;
+    font-size: 0.97rem;
+    padding: 4px 10px;
+    flex: 1 1 55%;
+    height: 44px;
+    line-height: 44px;
+}
+
+select:focus {
+  outline: none;
+}
+
+  /* Default styles (for desktop and up) */
+.language-switcher {
+  margin-right: 15px;
+}
+
+.language-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.language-btn img {
+  width: 20px;
+  height: 14px;
+  object-fit: contain;
+  display: block;
+}
+
+.language-btn:hover img {
+  opacity: 0.8;
+}
+
+/* Repeated and adjustable styles for mobile */
+@media (max-width: 768px) {
+  .language-switcher {
+    margin-right: 15px;
+  }
+
+  .language-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .language-btn img {
+    width: 20px;
+    height: 14px;
+    object-fit: contain;
+    display: block;
+  }
+
+  .language-btn:hover img {
+    opacity: 0.8;
+  }
+}
+
+  .spinner {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  border: 2px solid #fff;
+  border-top: 2px solid #fa5391;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+  margin-right: 8px;
+  vertical-align: middle;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+
+@supports (-webkit-touch-callout: none) {
+  #descFields .description-field select {
+    line-height: normal !important;
+  }
+}
+
+.page-slide-in {
+  animation: slideInRight 0.3s ease forwards;
+}
+
+.page-slide-out {
+  animation: slideOutLeft 0.3s ease forwards;
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideOutLeft {
+  from {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+}
+/* Change City Button Styles */
+.change-city-item {
+    border-top: 1px solid #e2e8f0;
+    margin-top: 10px;
+    padding-top: 10px;
+}
+
+.change-city-link {
+    display: block;
+    padding: 12px 20px;
+    background: #f8fafc;
+    color: #2d3748;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    border-radius: 8px;
+    margin: 0 10px;
+    text-align: center;
+}
+
+.change-city-link:hover {
+    background: #0cc4e9;
+    color: white;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(12, 196, 233, 0.3);
+}
+
+/* Mobile responsive adjustments */
+@media (max-width: 768px) {
+    .change-city-link {
+        padding: 10px 16px;
+        margin: 0 8px;
+        font-size: 0.95rem;
+    }
+}
+
+/* RTL support for Arabic */
+[dir="rtl"] .change-city-link {
+    text-align: center;
+}
+.optional-note {
+    color: #666;
+    font-size: 0.9em;
+    font-weight: normal;
+}
+#subcategory-group {
+    transition: all 0.3s ease;
+}
+
+#subcategory-group.show {
+    display: block !important;
+}
+
+.subcategory-loading {
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+
+.optional-note {
+    color: #888;
+    font-size: 0.9em;
+    font-weight: normal;
+}
+
+#subcategory-group {
+    transition: all 0.3s ease;
+}
+
+}
+/* License Plate Section Styles */
+#licensePlateSection {
+    animation: fadeIn 0.3s ease-in-out;
+    margin: 20px 0;
+}
+
+/* License Plate Preview Container */
+.plate-preview-container {
+    margin: 30px 0;
+    padding: 30px;
+    background: linear-gradient(135deg, #f5f7fa 0%, #e8ecf1 100%);
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Canvas Styling */
+#plateCanvas {
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+    image-rendering: crisp-edges;
+    image-rendering: -webkit-optimize-contrast;
+    background: #ffffff;
+}
+
+/* Plate Number Input Styling */
+#plate-number {
+    font-size: 1.2em;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+/* Hide description and image sections when license plate is active */
+.hide-for-license-plate {
+    display: none !important;
+}
+
+/* Smooth transitions */
+.input-group {
+    transition: opacity 0.3s ease, max-height 0.3s ease;
+}
+
+/* Animation for showing license plate section */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Plate Code Section */
+#plateCodeSection {
+    margin-top: 20px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .plate-preview-container {
+        padding: 20px;
+    }
+    
+    #plateCanvas {
+        max-width: 95%;
+    }
+}
+

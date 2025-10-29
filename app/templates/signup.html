@@ -1,0 +1,421 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="msapplication-navbutton-color" content="#ffffff">
+  <meta name="apple-mobile-web-app-title" content="Dealify">
+    <title>Dealify Sign Up</title>
+     <link rel="stylesheet" href="{{ url_for('static', filename='css/signupstyle.css', v='1.4.7') }}">
+  	<link rel="stylesheet" href="{{ url_for('static', filename='css/nav.css', v='1.4.7') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  	<!-- Main favicon for all browsers -->
+<link rel="icon" href="/static/img/favicon.ico" type="image/x-icon" />
+<!-- Open Graph for WhatsApp, Facebook, LinkedIn -->
+<meta property="og:title" content="Dealify - Buy & Sell Securely" />
+<meta property="og:description" content="Discover trusted listings and secure payments on Dealify." />
+<meta property="og:image" content="https://dealify.ae/static/img/shareimg.png" />
+<meta property="og:url" content="https://dealify.ae" />
+<meta property="og:type" content="website" />
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Dealify - Buy & Sell Securely" />
+<meta name="twitter:description" content="Discover trusted listings and secure payments on Dealify." />
+<meta name="twitter:image" content="https://dealify.ae/static/img/shareimg.png" />
+    
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="back-btn">
+       <a href="javascript:void(0);" onclick="goBack()">
+  		<img src="{{ url_for('static', filename='img/backbuttonwhite.png') }}" alt="Back" style="height: 30px;">
+		</a>
+      </div>
+      <ul class="nav-links">
+        <li class="dropdown">
+         <a href="https://dealify.ae/" class="category en" data-en="Marketplace" data-ar="السوق">Marketplace</a>
+            <li class="mega-dropdown">
+              <i class="dropdown-icon">▼</i>
+
+              
+              <div class="mega-dropdown-content">
+                <!-- Column 1: Properties -->
+                <div class="mega-column">
+                    <h4 data-en="Properties" data-ar="العقارات">Properties</h4>
+                    <a href="{{ url_for('category_page', category_name='Properties For Sale') }}" data-en="For Sale" data-ar="للبيع">For Sale</a>
+                    <a href="{{ url_for('category_page', category_name='Properties For Rent') }}" data-en="For Rent" data-ar="للإيجار">For Rent</a>
+                    <a href="{{ url_for('category_page', category_name='Home & Garden') }}" data-en="Home & Garden" data-ar="المنزل والحديقة">Home & Garden</a>
+                </div>
+                
+                <!-- Column 2: Vehicles -->
+                <div class="mega-column">
+                    <h4 data-en="Vehicles" data-ar="المركبات">Vehicles</h4>
+                    <a href="{{ url_for('category_page', category_name='Cars & Vehicles') }}" data-en="Cars & Vehicles" data-ar="السيارات والمركبات">Cars & Vehicles</a>
+                    <a href="{{ url_for('category_page', category_name='Motorcycles & Scooters') }}" data-en="Motorcycles & Scooters" data-ar="الدراجات النارية والدراجات البخارية">Motorcycles & Scooters</a>
+                </div>
+                
+                <!-- Column 3: Electronics -->
+                <div class="mega-column">
+                    <h4 data-en="Electronics" data-ar="الإلكترونيات">Electronics</h4>
+                    <a href="{{ url_for('category_page', category_name='Electronics') }}" data-en="Electronics" data-ar="الإلكترونيات">Electronics</a>
+                    <a href="{{ url_for('category_page', category_name='Appliances') }}" data-en="Appliances" data-ar="الأجهزة المنزلية">Appliances</a>
+                </div>
+                
+                <!-- Column 4: Fashion -->
+                <div class="mega-column">
+                    <h4 data-en="Fashion" data-ar="الموضة">Fashion</h4>
+                    <a href="{{ url_for('category_page', category_name='Mens Apparel') }}" data-en="Men's Apparel" data-ar="ملابس الرجال">Men's Apparel</a>
+                    <a href="{{ url_for('category_page', category_name='Womens Apparel') }}" data-en="Women's Apparel" data-ar="ملابس النساء">Women's Apparel</a>
+                    <a href="{{ url_for('category_page', category_name='Kids, Toys & Baby') }}" data-en="Kids, Toys & Baby" data-ar="الأطفال، الألعاب والرضع">Kids, Toys & Baby</a>
+                </div>
+                
+                <!-- Column 5: Miscellaneous Categories -->
+                <div class="mega-column">
+                    <h4 data-en="More Categories" data-ar="المزيد من الفئات">More Categories</h4>
+                    <a href="{{ url_for('category_page', category_name='Fitness & Sports Equipment') }}" data-en="Fitness & Sports Equipment" data-ar="معدات اللياقة البدنية والرياضة">Fitness & Sports Equipment</a>
+                    <a href="{{ url_for('category_page', category_name='Professional Services') }}" data-en="Professional Services" data-ar="الخدمات المهنية">Professional Services</a>
+                    <a href="{{ url_for('category_page', category_name='Jobs & Freelance') }}" data-en="Jobs & Freelance" data-ar="وظائف وعمل حر">Jobs & Freelance</a>
+                    <a href="{{ url_for('category_page', category_name='Courses & Training') }}" data-en="Courses & Training" data-ar="الدورات التدريبية والتدريب">Courses & Training</a>
+                    <a href="{{ url_for('category_page', category_name='Books & Stationary') }}" data-en="Books & Stationary" data-ar="الكتب والقرطاسية">Books & Stationary</a>
+                </div>
+                
+                <!-- Column 6: Additional Categories -->
+                <div class="mega-column">
+                    <h4 data-en="Other" data-ar="أخرى">Other</h4>
+                    <a href="{{ url_for('category_page', category_name='Pets & Pet Supplies') }}" data-en="Pets & Pet Supplies" data-ar="الحيوانات الأليفة ومستلزماتها">Pets & Pet Supplies</a>
+                    <a href="{{ url_for('category_page', category_name='Tickets & Experiences') }}" data-en="Tickets & Experiences" data-ar="التذاكر والتجارب">Tickets & Experiences</a>
+                    <a href="{{ url_for('category_page', category_name='Advertising Spaces') }}" data-en="Advertising Spaces" data-ar="مساحات إعلانية">Advertising Spaces</a>
+                    <a href="{{ url_for('category_page', category_name='Miscellaneous') }}" data-en="Miscellaneous" data-ar="متنوع">Miscellaneous</a>
+                </div>
+            </div>
+            
+              </div>
+            </li>
+              </div>
+            </li>
+          </div>
+        </li>
+        <li><a href="{{ url_for('subscriptions') }}" data-en="Packages" data-ar="الاشتراكات">Packages</a></li>
+        <li><a href="{{ url_for('contactus') }}" data-en="Contact Us" data-ar="اتصل بنا">Contact Us</a></li>
+        <li><a href="{{ url_for('aboutus') }}" data-en="About Us" data-ar="معلومات عنا">About Us</a></li>
+      </ul>
+      <div class="navbar-end">
+  <div class="language-switcher">
+    <button id="lang-en" class="language-btn" onclick="changeLanguage('en')" style="display: none;">
+      <img src="{{ url_for('static', filename='img/download (2).png') }}" alt=""> 
+    </button>
+    <button id="lang-ar" class="language-btn" onclick="changeLanguage('ar')" style="display: none;">
+      <img src="{{ url_for('static', filename='img/Flag-Saudi-Arabia.webp') }}" alt=""> 
+    </button>
+  </div>
+        {% if current_user.is_authenticated %}
+        <a href="{{ url_for('profile_panel') }}">
+          <img src="{{ url_for('static', filename='img/avatar.png') }}" alt="User Icon" class="user-icon">
+        </a>
+        <span class="user-info-text">
+          {{ current_user.name }} <br>
+         Credits:  {{ listings_count }}
+         </span><br>
+
+        {% else %}
+        <a href="{{ url_for('login') }}" class="profile-link no-image">
+          <img src="{{ url_for('static', filename='img/avatar.png') }}" alt="User Icon" class="user-icon">
+          LOGIN
+        </a>
+        {% endif %}
+
+
+
+
+
+
+      </div>
+    </nav>
+  </header>
+<!-- Add this at the top of your body content -->
+<div class="mobile-menu-container">
+  <!-- Mobile Menu Button (Hamburger Icon) -->
+  <div class="mobile-menu-btn" onclick="toggleMenu()">
+    <div class="hamburger-line"></div>
+    <div class="hamburger-line"></div>
+    <div class="hamburger-line"></div>
+  </div>
+
+  <!-- Mobile Side Menu -->
+  <div id="mobileMenu" class="side-menu">
+    <div class="side-menu-header">
+      <img src="{{ url_for('static', filename='img/top right logo.png') }}" alt="Logo" class="menu-logo">
+      <!--<span class="close-btn" onclick="toggleMenu()">×</span>-->
+    </div>
+    <ul class="side-menu-links">
+      <li>
+      <span class="user-info-text custom-style">
+  {{ current_user.name|title }} <br> 
+  <span data-en="Credits" data-ar="الأرصدة">Credits</span> : {{ listings_count }}
+</span><br>
+
+  <a href="{{ url_for('subscriptions') }}" onclick="toggleMenu()" data-en="Packages" data-ar="الباقات">
+    Packages
+  </a>
+</li>
+<li>
+  <a href="{{ url_for('contactus') }}" onclick="toggleMenu()" data-en="Contact Us" data-ar="اتصل بنا">
+    Contact Us
+  </a>
+</li>
+<li>
+  <a href="{{ url_for('aboutus') }}" onclick="toggleMenu()" data-en="About Us" data-ar="معلومات عنا">
+    About Us
+  </a>
+</li>
+
+      {% if current_user.is_authenticated %}
+  <li>
+    <a href="{{ url_for('profile_panel') }}" onclick="toggleMenu()" data-en="Profile" data-ar="الملف الشخصي">
+      Profile
+    </a>
+  </li>
+{% else %}
+  <li>
+    <a href="{{ url_for('login') }}" onclick="toggleMenu()" data-en="Login" data-ar="تسجيل الدخول">
+      Login
+    </a>
+  </li>
+{% endif %}
+     <li class="language-switcher-container">
+  <div class="language-toggle">
+  <button id="sidebar-lang-en" class="language-btn" onclick="changeLanguage('en')">
+    <img src="{{ url_for('static', filename='img/download (2).png') }}" alt="">
+  </button>
+  <button id="sidebar-lang-ar" class="language-btn" onclick="changeLanguage('ar')">
+    <img src="{{ url_for('static', filename='img/Flag-Saudi-Arabia.webp') }}" alt="">
+  </button>
+</div>
+    </ul>
+  </div>
+
+  <!-- Overlay for when menu is open -->
+  <div id="menuOverlay" class="menu-overlay" onclick="toggleMenu()"></div>
+</div>
+    <main>
+        <div class="container">
+       <div class="illustration"></div>
+            <div class="form-container">
+                <h1 data-en="Create an Account" data-ar="إنشاء حساب"></h1>
+                <p data-en="Please fill in the details below to sign up" data-ar="يرجى ملء التفاصيل أدناه للتسجيل"></p>
+                <form method="POST" id="signupForm" name="signup" autocomplete="on" novalidate>
+<input type="text" name="username" id="username" placeholder="Full Name" data-en="Full Name" data-ar="الاسم الكامل" required>
+<div class="error-message" id="error-username"></div>
+<input type="email"
+       name="email"
+       id="email"
+       placeholder="Email Address"
+	value="{{ session.pop('prefill_email', '') }}"
+       data-en="Email Address"
+       data-ar="عنوان البريد الإلكتروني"
+       pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
+       title="Enter a valid email address (e.g. user@example.com)"
+       autocomplete="email"
+       required>
+<div class="error-message" id="error-email"></div>
+                  <div class="error-message" id="email-typo-suggestion" style="margin-top: 4px;"></div>
+
+
+<input type="tel"
+       name="phone"
+       id="phoneInput"
+       maxlength="10"
+       placeholder="05X XXX XXXX"
+       data-en="05X XXX XXXX"
+       data-ar="05X XXX XXXX"
+       pattern="^05(0|2|3|4|5|6|8)[0-9]{7}$"
+       title="Enter a valid UAE phone number (e.g. 0501234567)"
+       data-en-title="Enter a valid UAE phone number (e.g. 0501234567)"
+       data-ar-title="أدخل رقم هاتف إماراتي صحيح (مثال: 0501234567)"
+       required>
+
+<div class="error-message" id="error-phone"
+     data-en="Please enter a valid phone number"
+     data-ar="يرجى إدخال رقم هاتف صحيح">
+</div>
+
+<!-- Password Field -->
+<div class="password-wrapper">
+  <input type="password" id="password" name="password"
+         placeholder="Password"
+         data-en="Password"
+         data-ar="كلمة المرور"
+         pattern="(?=.*[A-Z])(?=.*\d).{6,}"
+         title="Password must be at least 6 characters long, include one uppercase letter and one number"
+         data-en-title="Password must be at least 6 characters long, include one uppercase letter and one number"
+         data-ar-title="يجب أن تكون كلمة المرور 6 أحرف على الأقل، وتحتوي على حرف كبير ورقم"
+         required autocomplete="new-password">
+  <span class="toggle-password" onclick="togglePassword('password', this)">
+    <i class="fa-solid fa-eye"></i>
+  </span>
+</div>
+<div class="error-message" id="error-password"
+     data-en="Please enter a valid password"
+     data-ar="يرجى إدخال كلمة مرور صالحة">
+</div>
+
+<!-- Confirm Password Field -->
+<div class="password-wrapper">
+  <input type="password" id="password_confirm" name="password_confirm"
+         placeholder="Confirm Password"
+         data-en="Confirm Password"
+         data-ar="تأكيد كلمة المرور"
+         required autocomplete="new-password">
+  <span class="toggle-password" onclick="togglePassword('password_confirm', this)">
+    <i class="fa-solid fa-eye"></i>
+  </span>
+</div>
+<div class="error-message" id="error-password-confirm"
+     data-en="Passwords do not match"
+     data-ar="كلمتا المرور غير متطابقتين">
+</div>
+
+
+
+                  <select name="city" id="city" required>
+  <option value="" disabled selected data-en="Emirate" data-ar="الإمارة">Emirate</option>
+  <option value="Dubai" data-en="Dubai" data-ar="دبي">Dubai</option>
+  <option value="Abu Dhabi" data-en="Abu Dhabi" data-ar="أبو ظبي">Abu Dhabi</option>
+  <option value="Sharjah" data-en="Sharjah" data-ar="الشارقة">Sharjah</option>
+  <option value="Ajman" data-en="Ajman" data-ar="عجمان">Ajman</option>
+  <option value="Ras Al Khaimah" data-en="Ras Al Khaimah" data-ar="رأس الخيمة">Ras Al Khaimah</option>
+  <option value="Umm Al Quwain" data-en="Umm Al Quwain" data-ar="أم القيوين">Umm Al Quwain</option>
+  <option value="Fujairah" data-en="Fujairah" data-ar="الفجيرة">Fujairah</option>
+</select>
+<div class="error-message" id="error-city"></div>
+
+
+					<button type="submit" data-en="Sign Up" data-ar="إنشاء حساب">Sign Up</button>
+
+					<p>
+				  <span data-en="Already have an account?" data-ar="لديك حساب بالفعل؟">Already have an account?</span>
+                <a href="{{ url_for('login') }}" data-en="Log In" data-ar="تسجيل الدخول">Log In</a>
+				</p>
+                  
+<!-- Google Button Wrapper -->
+<div class="social-buttons google-signin-wrapper">
+  <div id="g_id_onload"
+       data-client_id="828643865110-2g1ck8e814o93r7b3mja4tbnms41vsb8.apps.googleusercontent.com"
+       data-callback="handleGoogleResponse"
+       data-auto_prompt="false">
+  </div>
+  <div class="g_id_signin"
+       data-type="standard"
+       data-size="large"
+       data-theme="outline"
+       data-text="continue_with"
+       data-shape="rectangular"
+       data-logo_alignment="left"
+       data-lang="en">
+  </div>
+</div>
+
+<!-- Apple Sign-In Button -->
+<div class="social-buttons apple-signin-wrapper">
+<button id="apple-signin-btn" type="button" style="
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 12px;
+  padding: 10px 16px;
+  background-color: #000;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 8px;
+  font-weight: 100; /* match Google */
+  width: 280px;
+  cursor: pointer;
+  font-family: Roboto, sans-serif;
+">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg"
+       alt="Apple Logo"
+       style="height: 18px; margin-left: -2px; filter: invert(1);" />
+  <span style="flex: 1; text-align: center;">Continue with Apple</span>
+</button>
+</div>
+
+              </form>
+              {% with messages = get_flashed_messages(with_categories=true) %}
+  {% if messages %}
+    {% set category, message = messages[-1] %}
+    <div class="flash-message {{ category }}">{{ message }}</div>
+  {% endif %}
+{% endwith %}
+
+              
+            </div>
+        </div>
+
+    </main>
+    <footer>
+      <div class="footer-container">
+        <!-- Left Section: Logo -->
+        <div class="footer-logo">
+          <img src="{{ url_for('static', filename='img/logo-surse (1).png') }}" alt="Dealify UAE Logo">
+        </div>
+  
+        <!-- Center Section: Links -->
+        <div class="footer-links">
+          <div>
+            
+          </div>
+          <div> 
+            <ul>
+              <li><a href="{{ url_for('terms') }}">Terms & Conditions</a></li>
+              <li><a href="{{ url_for('privacy') }}">Privacy Policy</a></li>
+            </ul>
+          </div>
+        </div>
+  
+        <!-- Right Section: Social Icons -->
+        <div class="social-icons">
+          <a href="https://www.facebook.com/profile.php?id=61571835762109" target="_blank">
+            <img src="{{ url_for('static', filename='img/fb.png') }}" alt="Facebook">
+          </a>
+          <a href="https://www.instagram.com/dealifyuae/" target="_blank">
+            <img src="{{ url_for('static', filename='img/icons8-instagram-480[1].png') }}" alt="Instagram">
+          </a>
+          <a href="https://x.com/dealifyuae" target="_blank">
+            <img src="{{ url_for('static', filename='img/twitter.png') }}" alt="Twitter (X)">
+          </a>
+          <a href="https://www.tiktok.com/@dealifyuae?_t=8sM1rqyTtns&_r=1" target="_blank">
+            <img
+              src="{{ url_for('static', filename='img/tiktok-round-white-icon.png') }}"
+              alt="TikTok">
+          </a>
+          <a href="https://wa.me/message/OIT32JOSRVQCL1" target="_blank">
+            <img src="{{ url_for('static', filename='img/733641.png') }}" alt="WhatsApp">
+          </a>
+          <a href="mailto:info@dealify.ae">
+            <img src="{{ url_for('static', filename='img/666162.png') }}" alt="Email">
+          </a>
+        </div>
+      </div>
+  
+      <div class="footer-bottom">
+        <p>Copyright © 2025 Dealify UAE</p>
+        <p>Powered by @Tech Crafts.</p>
+        <p>@Licensed by DED DUBAI.</p>
+      </div>
+    </footer>
+
+<script src="{{ url_for('static', filename='js/navscript.js') }}"></script>
+<script src="{{ url_for('static', filename='js/Signup.js') }}"></script>
+
+</body>
+</html>
+

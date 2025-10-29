@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Complete Signup</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/complete_google_signup.css', v='1.4.7') }}">
+</head>
+<body>
+  <div class="page-wrapper">
+    <div class="form-container">
+      {% with messages = get_flashed_messages(with_categories=true) %}
+  {% if messages %}
+    <div class="flash-messages">
+      {% for category, message in messages %}
+        <div class="flash flash-{{ category }}">{{ message }}</div>
+      {% endfor %}
+    </div>
+  {% endif %}
+{% endwith %}
+    <h2 data-en="Complete Your Sign Up" data-ar="أكمل إنشاء حسابك">Complete Your Sign Up</h2>
+    <form action="/finalize_google_signup" method="POST">
+      <input type="text" name="full_name" placeholder="Full Name" 
+       data-en="Full Name" data-ar="الاسم الكامل" required>
+
+
+<input type="tel"
+       name="phone"
+       id="phoneInput"
+       maxlength="10"
+       placeholder="05X XXX XXXX"
+       data-en="05X XXX XXXX"
+       data-ar="05X XXX XXXX"
+       pattern="^05(0|2|3|4|5|6|8)[0-9]{7}$"
+       title="Enter a valid UAE phone number (e.g. 0501234567)"
+       data-en-title="Enter a valid UAE phone number (e.g. 0501234567)"
+       data-ar-title="أدخل رقم هاتف إماراتي صحيح (مثال: 0501234567)"
+       required>
+
+      <select name="emirate" required>
+        <option value="" disabled selected data-en="Select Emirate" data-ar="اختر الإمارة">Select Emirate</option>
+        <option value="Dubai" data-en="Dubai" data-ar="دبي">Dubai</option>
+        <option value="Abu Dhabi" data-en="Abu Dhabi" data-ar="أبو ظبي">Abu Dhabi</option>
+        <option value="Sharjah" data-en="Sharjah" data-ar="الشارقة">Sharjah</option>
+        <option value="Ajman" data-en="Ajman" data-ar="عجمان">Ajman</option>
+        <option value="Fujairah" data-en="Fujairah" data-ar="الفجيرة">Fujairah</option>
+        <option value="Ras Al Khaimah" data-en="Ras Al Khaimah" data-ar="رأس الخيمة">Ras Al Khaimah</option>
+        <option value="Umm Al Quwain" data-en="Umm Al Quwain" data-ar="أم القيوين">Umm Al Quwain</option>
+      </select>
+
+      <button type="submit" data-en="Finish Signup" data-ar="إنهاء التسجيل">Finish Signup</button>
+    </form>
+ </div>
+  </div>
+ 
+  <script src="{{ url_for('static', filename='js/complete_google_signup.js') }}"></script>
+</body>
+
+</html>

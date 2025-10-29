@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="msapplication-navbutton-color" content="#ffffff">
+  <meta name="apple-mobile-web-app-title" content="Dealify">
+    <title>Dealify Add Listing</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/nav.css', v='1.4.7') }}">
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/listing.css', v='1.4.7') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/lucide@0.210.1/dist/lucide.min.js"></script>
+  <!-- Main favicon for all browsers -->
+<link rel="icon" href="/static/img/favicon.ico" type="image/x-icon" />
+<!-- Open Graph for WhatsApp, Facebook, LinkedIn -->
+<meta property="og:title" content="Dealify - Buy & Sell Securely" />
+<meta property="og:description" content="Discover trusted listings and secure payments on Dealify." />
+<meta property="og:image" content="https://dealify.ae/static/img/shareimg.png" />
+<meta property="og:url" content="https://dealify.ae" />
+<meta property="og:type" content="website" />
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Dealify - Buy & Sell Securely" />
+<meta name="twitter:description" content="Discover trusted listings and secure payments on Dealify." />
+<meta name="twitter:image" content="https://dealify.ae/static/img/shareimg.png" />
+
+
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="back-btn">
+         <a href="javascript:void(0);" onclick="goBack()">
+  		<img src="{{ url_for('static', filename='img/backbuttonwhite.png') }}" alt="Back" style="height: 30px;">
+		</a>
+      </div>
+      <ul class="nav-links">
+        <li class="dropdown">
+          <a href="https://dealify.ae/" class="category en" data-en="Marketplace" data-ar="السوق">Marketplace</a>
+            <li class="mega-dropdown">
+              <i class="dropdown-icon">▼</i>
+
+              </a>
+              <div class="mega-dropdown-content">
+                <!-- Column 1: Properties -->
+                <div class="mega-column">
+                    <h4 data-en="Properties" data-ar="العقارات">Properties</h4>
+                    <a href="{{ url_for('category_page', category_name='Properties For Sale') }}" data-en="For Sale" data-ar="للبيع">For Sale</a>
+                    <a href="{{ url_for('category_page', category_name='Properties For Rent') }}" data-en="For Rent" data-ar="للإيجار">For Rent</a>
+                    <a href="{{ url_for('category_page', category_name='Home & Garden') }}" data-en="Home & Garden" data-ar="المنزل والحديقة">Home & Garden</a>
+                </div>
+                
+                <!-- Column 2: Vehicles -->
+                <div class="mega-column">
+                    <h4 data-en="Vehicles" data-ar="المركبات">Vehicles</h4>
+                    <a href="{{ url_for('category_page', category_name='Cars & Vehicles') }}" data-en="Cars & Vehicles" data-ar="السيارات والمركبات">Cars & Vehicles</a>
+                    <a href="{{ url_for('category_page', category_name='Motorcycles & Scooters') }}" data-en="Motorcycles & Scooters" data-ar="الدراجات النارية والدراجات البخارية">Motorcycles & Scooters</a>
+                </div>
+                
+                <!-- Column 3: Electronics -->
+                <div class="mega-column">
+                    <h4 data-en="Electronics" data-ar="الإلكترونيات">Electronics</h4>
+                    <a href="{{ url_for('category_page', category_name='Electronics') }}" data-en="Electronics" data-ar="الإلكترونيات">Electronics</a>
+                    <a href="{{ url_for('category_page', category_name='Appliances') }}" data-en="Appliances" data-ar="الأجهزة المنزلية">Appliances</a>
+                </div>
+                
+                <!-- Column 4: Fashion -->
+                <div class="mega-column">
+                    <h4 data-en="Fashion" data-ar="الموضة">Fashion</h4>
+                    <a href="{{ url_for('category_page', category_name='Mens Apparel') }}" data-en="Men's Apparel" data-ar="ملابس الرجال">Men's Apparel</a>
+                    <a href="{{ url_for('category_page', category_name='Womens Apparel') }}" data-en="Women's Apparel" data-ar="ملابس النساء">Women's Apparel</a>
+                    <a href="{{ url_for('category_page', category_name='Kids, Toys & Baby') }}" data-en="Kids, Toys & Baby" data-ar="الأطفال، الألعاب والرضع">Kids, Toys & Baby</a>
+                </div>
+                
+                <!-- Column 5: Miscellaneous Categories -->
+                <div class="mega-column">
+                    <h4 data-en="More Categories" data-ar="المزيد من الفئات">More Categories</h4>
+                    <a href="{{ url_for('category_page', category_name='Fitness & Sports Equipment') }}" data-en="Fitness & Sports Equipment" data-ar="معدات اللياقة البدنية والرياضة">Fitness & Sports Equipment</a>
+                    <a href="{{ url_for('category_page', category_name='Professional Services') }}" data-en="Professional Services" data-ar="الخدمات المهنية">Professional Services</a>
+                    <a href="{{ url_for('category_page', category_name='Jobs & Freelance') }}" data-en="Jobs & Freelance" data-ar="وظائف وعمل حر">Jobs & Freelance</a>
+                    <a href="{{ url_for('category_page', category_name='Courses & Training') }}" data-en="Courses & Training" data-ar="الدورات التدريبية">Courses & Training</a>
+                    <a href="{{ url_for('category_page', category_name='Books & Stationary') }}" data-en="Books & Stationary" data-ar="الكتب والقرطاسية">Books & Stationary</a>
+                </div>
+                
+                <!-- Column 6: Additional Categories -->
+                <div class="mega-column">
+                    <h4 data-en="Other" data-ar="أخرى">Other</h4>
+                    <a href="{{ url_for('category_page', category_name='Pets & Pet Supplies') }}" data-en="Pets & Pet Supplies" data-ar="الحيوانات الأليفة">Pets & Pet Supplies</a>
+                    <a href="{{ url_for('category_page', category_name='Tickets & Experiences') }}" data-en="Tickets & Experiences" data-ar="التذاكر والتجارب">Tickets & Experiences</a>
+                    <a href="{{ url_for('category_page', category_name='Advertising Spaces') }}" data-en="Advertising Spaces" data-ar="مساحات إعلانية">Advertising Spaces</a>
+                    <a href="{{ url_for('category_page', category_name='Miscellaneous') }}" data-en="Miscellaneous" data-ar="متنوع">Miscellaneous</a>
+                </div>
+            </div>
+            
+              </div>
+            </li>
+              </div>
+            </li>
+          </div>
+        </li>
+        <li><a href="{{ url_for('subscriptions') }}" data-en="Packages" data-ar="الاشتراكات">Packages</a></li>
+        <li><a href="{{ url_for('contactus') }}" data-en="Contact Us" data-ar="اتصل بنا">Contact Us</a></li>
+        <li><a href="{{ url_for('aboutus') }}" data-en="About Us" data-ar="معلومات عنا">About Us</a></li>
+      </ul>
+      <div class="navbar-end">
+  <div class="language-switcher">
+    <button id="lang-en" class="language-btn" onclick="changeLanguage('en')" style="display: none;">
+      <img src="{{ url_for('static', filename='img/download (2).png') }}" alt=""> 
+    </button>
+    <button id="lang-ar" class="language-btn" onclick="changeLanguage('ar')" style="display: none;">
+      <img src="{{ url_for('static', filename='img/Flag-Saudi-Arabia.webp') }}" alt=""> 
+    </button>
+  </div>
+        {% if current_user.is_authenticated %}
+        <a href="{{ url_for('profile_panel') }}">
+          <img src="{{ url_for('static', filename='img/avatar-white.png') }}" alt="User Icon" class="user-icon">
+        </a>
+       <span class="user-info-text">
+          {{ current_user.name }} <br>
+         Credits :  {{ listings_count }}
+         </span><br>
+
+        {% else %}
+        <a href="{{ url_for('login') }}" class="profile-link no-image">
+          <img src="{{ url_for('static', filename='img/avatar-white.png') }}" alt="User Icon" class="user-icon">
+          LOGIN
+        </a>
+        {% endif %}
+
+
+
+      </div>
+    </nav>
+  </header>
+<!-- Add this at the top of your body content -->
+<div class="mobile-menu-container white">
+  <!-- Mobile Menu Button (Hamburger Icon) -->
+  <div class="mobile-menu-btn" onclick="toggleMenu()">
+    <div class="hamburger-line"></div>
+    <div class="hamburger-line"></div>
+    <div class="hamburger-line"></div>
+  </div>
+
+  <!-- Mobile Side Menu -->
+  <div id="mobileMenu" class="side-menu">
+    <div class="side-menu-header">
+      <img src="{{ url_for('static', filename='img/top right logo.png') }}" alt="Logo" class="menu-logo">
+     <!--<span class="close-btn" onclick="toggleMenu()">×</span>-->
+    </div>
+    <ul class="side-menu-links">
+      <li>
+        <span class="user-info-text custom-style">
+  {{ current_user.name|title }} <br> 
+  <span data-en="Credits" data-ar="الأرصدة">Credits</span> : {{ listings_count }}
+</span><br>
+
+  <a href="{{ url_for('subscriptions') }}" onclick="toggleMenu()" data-en="Packages" data-ar="الباقات">
+    Packages
+  </a>
+</li>
+<li>
+  <a href="{{ url_for('contactus') }}" onclick="toggleMenu()" data-en="Contact Us" data-ar="اتصل بنا">
+    Contact Us
+  </a>
+</li>
+<li>
+  <a href="{{ url_for('aboutus') }}" onclick="toggleMenu()" data-en="About Us" data-ar="معلومات عنا">
+    About Us
+  </a>
+</li>
+
+      {% if current_user.is_authenticated %}
+  <li>
+    <a href="{{ url_for('profile_panel') }}" onclick="toggleMenu()" data-en="Profile" data-ar="الملف الشخصي">
+      Profile
+    </a>
+  </li>
+{% else %}
+  <li>
+    <a href="{{ url_for('login') }}" onclick="toggleMenu()" data-en="Login" data-ar="تسجيل الدخول">
+      Login
+    </a>
+  </li>
+{% endif %}
+     <li class="language-switcher-container">
+  <div class="language-toggle">
+  <button id="sidebar-lang-en" class="language-btn" onclick="changeLanguage('en')">
+    <img src="{{ url_for('static', filename='img/download (2).png') }}" alt="">
+  </button>
+  <button id="sidebar-lang-ar" class="language-btn" onclick="changeLanguage('ar')">
+    <img src="{{ url_for('static', filename='img/Flag-Saudi-Arabia.webp') }}" alt="">
+  </button>
+</div>
+
+
+
+    </ul>
+    
+  </div>
+
+  <!-- Overlay for when menu is open -->
+  <div id="menuOverlay" class="menu-overlay" onclick="toggleMenu()"></div>
+</div>
+    <main>
+   <div class="container">
+     <div class="credit-box" data-en="You have {{ listings_count }} credits" data-ar="لديك {{ listings_count }} رصيد">
+  You have {{ listings_count }} credits
+</div>
+
+<h1 data-en="ADD LISTING" data-ar="أضف إعلان">ADD LISTING</h1>
+
+<p data-en="Fill out the details below to add your listing" data-ar="املأ التفاصيل أدناه لإضافة إعلانك">
+  Fill out the details below to add your listing
+</p>
+
+        
+        <form method="POST" action="{{ url_for('add_listing') }}" enctype="multipart/form-data">
+            <!-- Listing Details -->
+            <div class="input-group">
+                <label for="listing-name" data-en="Listing Name (required)" data-ar="اسم الإعلان (مطلوب)">Listing Name <span class="required-note">(required)</span></label>
+                <input type="text" id="listing-name" name="listing-name" placeholder="Enter listing title" data-en="Enter listing title" data-ar="أدخل عنوان الإعلان" required>
+            </div>
+            
+            <div class="input-group">
+                <label for="category" data-en="Listing Category (required)" data-ar="فئة الإعلان (مطلوبة)">Listing Category <span class="required-note">(required)</span></label>
+                <select id="category" name="category" required onchange="updateImageInputs(); updateDescriptionFields();">
+                    <option value="" disabled selected data-en="Select a category" data-ar="اختر فئة">Select a category</option>
+                    <option value="Properties For Sale" data-en="Properties For Sale" data-ar="عقارات للبيع">Properties For Sale</option>
+					<option value="Properties For Rent" data-en="Properties For Rent" data-ar="عقارات للإيجار">Properties For Rent</option>
+					<option value="Home & Garden" data-en="Home & Garden" data-ar="المنزل والحديقة">Home & Garden</option>
+					<option value="License Plates" data-en="License Plates" data-ar="لوحات سيارات">License Plates</option>
+					<option value="Cars & Vehicles" data-en="Cars & Vehicles" data-ar="سيارات ومركبات">Cars & Vehicles</option>
+					<option value="Motorcycles & Scooters" data-en="Motorcycles & Scooters" data-ar="دراجات نارية وسكوترات">Motorcycles & Scooters</option>
+					<option value="Boats" data-en="Boats" data-ar="قوارب">Boats</option>
+					<option value="Electronics" data-en="Electronics" data-ar="إلكترونيات">Electronics</option>
+					<option value="Appliances" data-en="Appliances" data-ar="أجهزة منزلية">Appliances</option>
+					<option value="Men's Apparel" data-en="Men's Apparel" data-ar="ملابس رجالية">Men's Apparel</option>
+					<option value="Women's Apparel" data-en="Women's Apparel" data-ar="ملابس نسائية">Women's Apparel</option>
+					<option value="Kids, Toys & Baby" data-en="Kids, Toys & Baby" data-ar="أطفال وألعاب ورضع">Kids, Toys & Baby</option>
+					<option value="Fitness & Sports Equipment" data-en="Fitness & Sports Equipment" data-ar="معدات رياضية ولياقة">Fitness & Sports Equipment</option>
+					<option value="Professional Services" data-en="Professional Services" data-ar="خدمات مهنية">Professional Services</option>
+					<option value="Jobs & Freelance" data-en="Jobs & Freelance" data-ar="وظائف وعمل حر">Jobs & Freelance</option>
+					<option value="Courses & Training" data-en="Courses & Training" data-ar="دورات وتدريب">Courses & Training</option>
+					<option value="Books & Stationary" data-en="Books & Stationary" data-ar="كتب وقرطاسية">Books & Stationary</option>
+					<option value="Pets & Pet Supplies" data-en="Pets & Pet Supplies" data-ar="حيوانات أليفة ومستلزماتها">Pets & Pet Supplies</option>
+					<option value="Tickets & Experiences" data-en="Tickets & Experiences" data-ar="تذاكر وتجارب">Tickets & Experiences</option>
+					<option value="Advertising Spaces" data-en="Advertising Spaces" data-ar="مساحات إعلانية">Advertising Spaces</option>
+					<option value="Miscellaneous" data-en="Miscellaneous" data-ar="متنوع">Miscellaneous</option>
+                </select>
+              <div class="category-cost-wrapper">
+ 			 <span id="categoryCost" class="category-cost-text" data-en="Select a category" data-ar="اختر فئة">Select a category</span>
+				</div>
+        
+    
+			<div class="input-group">
+ 				 <label for="price" data-en="Listing Price (required)" data-ar="سعر الإعلان (مطلوب)">Listing Price <span class="required-note">(required)</span></label>
+ 		 <div class="price-wrapper">
+  		  <input
+  type="text"
+  id="price"
+  name="price"
+  placeholder="Enter price"
+  data-en="Enter price"
+  data-ar="أدخل السعر"
+  inputmode="numeric"
+  required
+  oninput="formatPrice(this)"
+       onkeydown="return event.key >= 0 && event.key <= 9 || event.key === 'Backspace' || event.key === 'ArrowLeft' || event.key === 'ArrowRight';">
+  		  <span class="currency-label">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 344.84 299.91" class="aed-icon" aria-hidden="true">
+    <path d="M342.14,140.96l2.7,2.54v-7.72c0-17-11.92-30.84-26.56-30.84h-23.41C278.49,36.7,222.69,0,139.68,0c-52.86,0-59.65,0-109.71,0,0,0,15.03,12.63,15.03,52.4v52.58h-27.68c-5.38,0-10.43-2.08-14.61-6.01l-2.7-2.54v7.72c0,17.01,11.92,30.84,26.56,30.84h18.44s0,29.99,0,29.99h-27.68c-5.38,0-10.43-2.07-14.61-6.01l-2.7-2.54v7.71c0,17,11.92,30.82,26.56,30.82h18.44s0,54.89,0,54.89c0,38.65-15.03,50.06-15.03,50.06h109.71c85.62,0,139.64-36.96,155.38-104.98h32.46c5.38,0,10.43,2.07,14.61,6l2.7,2.54v-7.71c0-17-11.92-30.83-26.56-30.83h-18.9c.32-4.88.49-9.87.49-15s-.18-10.11-.51-14.99h28.17c5.37,0,10.43,2.07,14.61,6.01ZM89.96,15.01h45.86c61.7,0,97.44,27.33,108.1,89.94l-153.96.02V15.01ZM136.21,284.93h-46.26v-89.98l153.87-.02c-9.97,56.66-42.07,88.38-107.61,90ZM247.34,149.96c0,5.13-.11,10.13-.34,14.99l-157.04.02v-29.99l157.05-.02c.22,4.84.33,9.83.33,15Z"/>
+  </svg>
+</span>
+
+  			</div>
+			</div>
+
+
+    
+            <div class="input-group">
+  				<label for="description" data-en="Description" data-ar="الوصف">Description</label>
+  			<div id="description-box">
+ 		   <textarea id="description" name="description" placeholder="Enter description" data-en="Enter description" data-ar="أدخل الوصف" style="display:none;"></textarea>
+  		  <div id="descFields"></div>
+ 		 </div>
+			</div>
+
+		
+
+    
+            
+            <!-- Image Upload Section -->
+				<div class="input-group">
+ 			 <label for="image-upload" data-en="Listing Photos (required)" data-ar="صور الإعلان (مطلوبة)">Listing Photos <span class="required-note">(required)</span></label>
+
+
+ 			 <!-- Clickable Upload Box -->
+ 			<div id="image-upload-area" onclick="triggerFileInput()">
+ 		   <span data-en="Tap to Upload" data-ar="اضغط للتحميل">Tap to Upload</span>
+ 			   <img src="{{ url_for('static', filename='img/imgiconblack.png') }}" alt="upload icon" class="upload-icon">
+ 			 </div>
+
+
+ 				 <!-- Hidden Input (triggered by JS) -->
+<input type="file"
+       id="image-upload"
+       name="image"
+       accept="image/*"
+       multiple
+       required
+       hidden
+       data-en="Upload image(s)"
+       data-ar="تحميل صورة/صور">
+
+<!-- Previews and Hints -->
+<div id="image-preview"></div>
+<span id="image-limit-hint"
+      data-en="You can upload multiple images"
+      data-ar="يمكنك تحميل عدة صور">
+</span>
+
+
+
+    
+            <!-- Listing Address -->
+            <div class="input-group">
+                <label for="city" data-en="City (required)" data-ar="المدينة (مطلوبة)">City <span class="required-note">(required)</span></label>
+                <select id="city" name="city" required>
+                    <option value="" disabled selected data-en="Select a city" data-ar="اختر مدينة">Select a city</option>
+                    <option data-en="Abu Dhabi" data-ar="أبوظبي">Abu Dhabi</option>
+                    <option data-en="Dubai" data-ar="دبي">Dubai</option>
+                    <option data-en="Sharjah" data-ar="الشارقة">Sharjah</option>
+                    <option data-en="Ajman" data-ar="عجمان">Ajman</option>
+                    <option data-en="Umm Al-Quwain" data-ar="أم القيوين">Umm Al-Quwain</option>
+                    <option data-en="Ras Al Khaimah" data-ar="رأس الخيمة">Ras Al Khaimah</option>
+                    <option data-en="Fujairah" data-ar="الفجيرة">Fujairah</option>
+                </select>
+            </div>
+
+    
+              <div class="input-group">
+                <label for="address1" data-en="Address Line 1 (required)" data-ar="العنوان - السطر الأول (مطلوب)">Address Line 1 <span class="required-note">(required)</span></label>
+                <input type="text" id="address1" name="address1" placeholder="Enter address" data-en="Enter address" data-ar="أدخل العنوان" required>
+            </div>
+
+
+            <!-- Submit Button -->
+            <button type="submit" data-en="LIST" data-ar="نشر">LIST</button>
+
+        </form>
+    </div>
+    
+    
+</main>
+
+      <script src="{{ url_for('static', filename='js/modal.js') }}"></script>
+      <script src="{{ url_for('static', filename='js/navscript.js') }}"></script>
+      <script src="{{ url_for('static', filename='js/listing.js') }}"></script>
+    
+</body>
+</html>
+
+ 

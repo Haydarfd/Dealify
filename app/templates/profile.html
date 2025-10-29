@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="format-detection" content="telephone=no">
+  <title>Dealify Profile</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/profile.css', v='1.4.6') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/nav.css', v='1.4.6') }}">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="msapplication-navbutton-color" content="#ffffff">
+  <meta name="apple-mobile-web-app-title" content="Dealify">
+
+
+  
+<!-- Main favicon for all browsers -->
+<link rel="icon" href="/static/img/favicon.ico" type="image/x-icon" />
+<!-- Open Graph for WhatsApp, Facebook, LinkedIn -->
+<meta property="og:title" content="Dealify - Buy & Sell Securely" />
+<meta property="og:description" content="Discover trusted listings and secure payments on Dealify." />
+<meta property="og:image" content="https://dealify.ae/static/img/shareimg.png" />
+<meta property="og:url" content="https://dealify.ae" />
+<meta property="og:type" content="website" />
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Dealify - Buy & Sell Securely" />
+<meta name="twitter:description" content="Discover trusted listings and secure payments on Dealify." />
+<meta name="twitter:image" content="https://dealify.ae/static/img/shareimg.png" />
+
+</head>
+<body class="homepage">
+  <header>
+    <nav class="navbar">
+      <div class="back-btn">
+         <a href="javascript:void(0);" onclick="smartBack()">
+             <img src="{{ url_for('static', filename='img/backbuttonwhite.png') }}" alt="Back" style="height: 30px;">
+         </a>
+      </div>
+      <ul class="nav-links">
+        <li class="dropdown">
+         <a href="https://dealify.ae/" class="category en" data-en="Marketplace" data-ar="السوق">Marketplace</a>
+            <li class="mega-dropdown">
+              <i class="dropdown-icon">▼</i>
+
+              </a>
+              <div class="mega-dropdown-content">
+                <!-- Column 1: Properties -->
+                <div class="mega-column">
+                    <h4 data-en="Properties" data-ar="العقارات">Properties</h4>
+                    <a href="{{ url_for('category_page', category_name='Properties For Sale') }}" data-en="For Sale" data-ar="للبيع">For Sale</a>
+                    <a href="{{ url_for('category_page', category_name='Properties For Rent') }}" data-en="For Rent" data-ar="للإيجار">For Rent</a>
+                    <a href="{{ url_for('category_page', category_name='Home & Garden') }}" data-en="Home & Garden" data-ar="المنزل والحديقة">Home & Garden</a>
+                </div>
+                
+                <!-- Column 2: Vehicles -->
+                <div class="mega-column">
+                    <h4 data-en="Vehicles" data-ar="المركبات">Vehicles</h4>
+                    <a href="{{ url_for('category_page', category_name='Cars & Vehicles') }}" data-en="Cars & Vehicles" data-ar="السيارات والمركبات">Cars & Vehicles</a>
+                    <a href="{{ url_for('category_page', category_name='Motorcycles & Scooters') }}" data-en="Motorcycles & Scooters" data-ar="الدراجات النارية والدراجات البخارية">Motorcycles & Scooters</a>
+                </div>
+                
+                <!-- Column 3: Electronics -->
+                <div class="mega-column">
+                    <h4 data-en="Electronics" data-ar="الإلكترونيات">Electronics</h4>
+                    <a href="{{ url_for('category_page', category_name='Electronics') }}" data-en="Electronics" data-ar="الإلكترونيات">Electronics</a>
+                    <a href="{{ url_for('category_page', category_name='Appliances') }}" data-en="Appliances" data-ar="الأجهزة المنزلية">Appliances</a>
+                </div>
+                
+                <!-- Column 4: Fashion -->
+                <div class="mega-column">
+                    <h4 data-en="Fashion" data-ar="الموضة">Fashion</h4>
+                    <a href="{{ url_for('category_page', category_name='Mens Apparel') }}" data-en="Men's Apparel" data-ar="ملابس الرجال">Men's Apparel</a>
+                    <a href="{{ url_for('category_page', category_name='Womens Apparel') }}" data-en="Women's Apparel" data-ar="ملابس النساء">Women's Apparel</a>
+                    <a href="{{ url_for('category_page', category_name='Kids, Toys & Baby') }}" data-en="Kids, Toys & Baby" data-ar="الأطفال، الألعاب والرضع">Kids, Toys & Baby</a>
+                </div>
+                
+                <!-- Column 5: Miscellaneous Categories -->
+                <div class="mega-column">
+                    <h4 data-en="More Categories" data-ar="المزيد من الفئات">More Categories</h4>
+                    <a href="{{ url_for('category_page', category_name='Fitness & Sports Equipment') }}" data-en="Fitness & Sports Equipment" data-ar="معدات اللياقة البدنية والرياضة">Fitness & Sports Equipment</a>
+                    <a href="{{ url_for('category_page', category_name='Professional Services') }}" data-en="Professional Services" data-ar="الخدمات المهنية">Professional Services</a>
+                    <a href="{{ url_for('category_page', category_name='Jobs & Freelance') }}" data-en="Jobs & Freelance" data-ar="وظائف وعمل حر">Jobs & Freelance</a>
+                    <a href="{{ url_for('category_page', category_name='Courses & Training') }}" data-en="Courses & Training" data-ar="الدورات التدريبية والتدريب">Courses & Training</a>
+                    <a href="{{ url_for('category_page', category_name='Books & Stationary') }}" data-en="Books & Stationary" data-ar="الكتب والقرطاسية">Books & Stationary</a>
+                </div>
+                
+                <!-- Column 6: Additional Categories -->
+                <div class="mega-column">
+                    <h4 data-en="Other" data-ar="أخرى">Other</h4>
+                    <a href="{{ url_for('category_page', category_name='Pets & Pet Supplies') }}" data-en="Pets & Pet Supplies" data-ar="الحيوانات الأليفة ومستلزماتها">Pets & Pet Supplies</a>
+                    <a href="{{ url_for('category_page', category_name='Tickets & Experiences') }}" data-en="Tickets & Experiences" data-ar="التذاكر والتجارب">Tickets & Experiences</a>
+                    <a href="{{ url_for('category_page', category_name='Advertising Spaces') }}" data-en="Advertising Spaces" data-ar="مساحات إعلانية">Advertising Spaces</a>
+                    <a href="{{ url_for('category_page', category_name='Miscellaneous') }}" data-en="Miscellaneous" data-ar="متنوع">Miscellaneous</a>
+                </div>
+            </div>
+            
+              </div>
+            </li>
+              </div>
+            </li>
+          </div>
+        </li>
+        <li><a href="{{ url_for('subscriptions') }}" data-en="Packages" data-ar="الاشتراكات">Packages</a></li>
+        <li><a href="{{ url_for('contactus') }}" data-en="Contact Us" data-ar="اتصل بنا">Contact Us</a></li>
+        <li><a href="{{ url_for('aboutus') }}" data-en="About Us" data-ar="معلومات عنا">About Us</a></li>
+      </ul>
+      <div class="navbar-end">
+  <div class="language-switcher">
+    <button id="lang-en" class="language-btn" onclick="changeLanguage('en')" style="display: none;">
+      <img src="{{ url_for('static', filename='img/download (2).png') }}" alt=""> 
+    </button>
+    <button id="lang-ar" class="language-btn" onclick="changeLanguage('ar')" style="display: none;">
+      <img src="{{ url_for('static', filename='img/Flag-Saudi-Arabia.webp') }}" alt=""> 
+    </button>
+  </div>
+        {% if current_user.is_authenticated %}
+        <a href="{{ url_for('profile_panel') }}">
+          <img src="{{ url_for('static', filename='img/avatar-white.png') }}" alt="User Icon" class="user-icon">
+        </a>
+       <span class="user-info-text">
+          {{ current_user.name }} <br>
+         Credits :  {{ listings_count }}
+         </span><br>
+
+        {% else %}
+        <a href="{{ url_for('login') }}" class="profile-link no-image">
+          <img src="{{ url_for('static', filename='img/avatar.png') }}" alt="User Icon" class="user-icon">
+          LOGIN
+        </a>
+        {% endif %}
+
+
+
+
+
+
+      </div>
+  
+    </nav>
+  </header>
+<!-- Add this at the top of your body content -->
+<div class="mobile-menu-container">
+  <!-- Mobile Menu Button (Hamburger Icon) -->
+  <div class="mobile-menu-btn white" onclick="toggleMenu()">
+    <div class="hamburger-line"></div>
+    <div class="hamburger-line"></div>
+    <div class="hamburger-line"></div>
+  </div>
+
+  <!-- Mobile Side Menu -->
+  <div id="mobileMenu" class="side-menu">
+    <div class="side-menu-header">
+      <img src="{{ url_for('static', filename='img/top right logo.png') }}" alt="Logo" class="menu-logo">
+      <!--<span class="close-btn" onclick="toggleMenu()">×</span>-->
+    </div>
+    <ul class="side-menu-links">
+      <li>
+        <span class="user-info-text custom-style">
+  {{ current_user.name|title }} <br> 
+  <span data-en="Credits" data-ar="الأرصدة">Credits</span> : {{ listings_count }}
+</span><br>
+
+  <a href="{{ url_for('subscriptions') }}" onclick="toggleMenu()" data-en="Packages" data-ar="الباقات">
+    Packages
+  </a>
+</li>
+<li>
+  <a href="{{ url_for('contactus') }}" onclick="toggleMenu()" data-en="Contact Us" data-ar="اتصل بنا">
+    Contact Us
+  </a>
+</li>
+<li>
+  <a href="{{ url_for('aboutus') }}" onclick="toggleMenu()" data-en="About Us" data-ar="معلومات عنا">
+    About Us
+  </a>
+</li>
+
+      {% if current_user.is_authenticated %}
+  <li>
+    <a href="{{ url_for('profile_panel') }}" onclick="toggleMenu()" data-en="Profile" data-ar="الملف الشخصي">
+      Profile
+    </a>
+  </li>
+{% else %}
+  <li>
+    <a href="{{ url_for('login') }}" onclick="toggleMenu()" data-en="Login" data-ar="تسجيل الدخول">
+      Login
+    </a>
+  </li>
+{% endif %}
+      <li class="language-switcher-container">
+  <div class="language-toggle">
+  <button id="sidebar-lang-en" class="language-btn" onclick="changeLanguage('en')">
+    <img src="{{ url_for('static', filename='img/download (2).png') }}" alt="">
+  </button>
+  <button id="sidebar-lang-ar" class="language-btn" onclick="changeLanguage('ar')">
+    <img src="{{ url_for('static', filename='img/Flag-Saudi-Arabia.webp') }}" alt="">
+  </button>
+</div>
+
+
+{% if session.pop('verification_submitted', None) %}
+  <div class="alert-message success" style="padding: 12px; background: #e1f7fb; border-left: 6px solid #0cc4e9; color: #0a5e75; font-weight: 600; margin: 16px auto; max-width: 500px; text-align: center; border-radius: 10px;">
+    Your verification request has been submitted. Please wait while we review your documents.
+  </div>
+{% endif %}
+
+    </ul>
+    
+  </div>
+
+  <!-- Overlay for when menu is open -->
+  <div id="menuOverlay" class="menu-overlay" onclick="toggleMenu()"></div>
+</div>
+    <main>
+      
+<div class="profile-container">
+    <!-- Profile Header Section -->
+    <div class="profile-header">
+      <div class="profile-avatar-container">
+        <img src="{{ url_for('static', filename='img/avatarblue.png') }}" alt="Profile Image" id="profile-image" class="profile-avatar" onerror="this.onerror=null;this.src='{{ url_for('static', filename='img/avatarblue.png') }}';">
+        <div class="avatar-edit" onclick="document.getElementById('avatar-upload').click()">
+          <i class="fas fa-camera"></i>
+        </div>
+        <div class="avatar-actions">
+          <button class="avatar-action-btn" onclick="document.getElementById('avatar-upload').click()"><i class="fas fa-edit"></i></button>
+          <button class="avatar-action-btn" onclick="removeAvatar()"><i class="fas fa-trash"></i></button>
+        </div>
+        <input type="file" id="avatar-upload" accept="image/*" style="display: none;" onchange="uploadAvatar(this)">
+      </div>
+      
+      <div class="profile-name-container" style="position: relative; text-align: center;">
+  <h1 class="profile-name" id="profile-name-text" style="display: inline-flex; align-items: center; gap: 6px; justify-content: center;">
+    {{ current_user.name }}
+    {% if is_verified_admin %}
+<span class="verified-badge" title="Verified" style="
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 18px;
+  height: 18px;
+  background-color: #0cc4e9;
+  border-radius: 50%;
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+  line-height: 1;
+  margin-left: 4px;
+  position: relative;
+  top: 1px;
+">
+  &#10003;
+</span>
+    {% endif %}
+  </h1>
+  <button id="edit-name-btn" class="edit-name-btn"
+            onclick="showNameEdit()"
+            style="background: none; border: none; padding: 0; margin-left: 6px; cursor: pointer;">
+      <i class="fas fa-edit" style="font-size: 14px; color: #7a7a7a;"></i>
+    </button>
+  </div>
+
+
+      <div class="contact-box" style="
+  display: inline-block;
+  padding: 6px 12px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  font-size: 13px;
+  line-height: 1.3;
+  text-align: center;
+  color: #000; /* <-- This makes the text black */
+">
+  <div>{{ current_user.email }}</div>
+<span style="text-decoration: none; color: inherit; pointer-events: none;">
+  {{ current_user.phone[:3] + " " + current_user.phone[3:6] + " " + current_user.phone[6:] }}
+</span>
+
+</div>
+
+    <div class="profile-stats">
+  <div class="stat-item" onclick="showContent('Manage Listings')">
+    <div class="stat-value" id="listings-count">0</div>
+    <div class="stat-label" data-en="Listings" data-ar="الإعلانات">Listings</div>
+  </div>
+  <div class="stat-item" onclick="showContent('Favorites')">
+    <div class="stat-value" id="favorites-count">0</div>
+    <div class="stat-label" data-en="Favorites" data-ar="المفضلة">Favorites</div>
+  </div>
+</div>
+      
+<div class="container">
+  <div class="credit-box" 
+     data-en="Available Credits : {{ listings_count }}" 
+     data-ar="لديك {{ listings_count }} رصيد"
+     style="font-weight: 700; color: #0cc4e9;">
+  Available Credits : {{ listings_count }}
+</div>
+</div>
+
+</div>
+
+    <!-- Navigation Menu -->
+<div class="profile-menu">
+  <div class="menu-header" data-en="My Account" data-ar="حسابي">My Account</div>
+
+  <div class="menu-item" onclick="showContent('Dashboard')">
+    <i class="fas fa-display"></i>
+    <span data-en="Dashboard" data-ar="لوحة التحكم">Dashboard</span>
+  </div>
+
+  <div class="menu-item" onclick="showContent('Manage Listings')">
+    <i class="fa-solid fa-rectangle-list"></i>
+    <span data-en="Manage Listings" data-ar="إدارة الإعلانات">Manage Listings</span>
+  </div>
+
+  <div class="menu-item" onclick="showContent('Favorites')">
+    <i class="fas fa-heart"></i>
+    <span data-en="Favorites" data-ar="المفضلة">Favorites</span>
+  </div>
+
+  <div class="menu-item" onclick="showContent('RequestVerification')">
+  <i class="fas fa-id-card"></i>
+  <span data-en="Request Verification" data-ar="طلب التوثيق">Request Verification</span>
+</div>
+
+  <div class="menu-item" onclick="logout()">
+    <i class="fa-solid fa-right-from-bracket"></i>
+    <span data-en="Logout" data-ar="تسجيل الخروج">Logout</span>
+  </div>
+
+  <div class="menu-item" onclick="deleteAccount()">
+    <i class="fas fa-user-slash" style="color: #ff3636;"></i>
+    <span data-en="Delete Account" data-ar="حذف الحساب">Delete Account</span>
+  </div>
+</div>
+
+    <!-- Content Area -->
+<div class="content-area" id="content">
+  <div class="welcome-message">
+    <h2 data-en="Welcome to Your Dashboard" data-ar="مرحبًا بك في لوحة التحكم">Welcome to Your Dashboard</h2>
+    <p data-en="Here you can manage your listings, view your favorites, and update your account information."
+       data-ar="هنا يمكنك إدارة إعلاناتك، عرض المفضلة، وتحديث معلومات حسابك">
+       Here you can manage your listings, view your favorites, and update your account information.
+    </p>
+  </div>
+</div>
+  
+<div id="DashboardSection" class="content-section" style="display: none;"></div>
+<div id="ManageListingsSection" class="content-section" style="display: none;"></div>
+<div id="FavoritesSection" class="content-section" style="display: none;"></div>
+
+<!-- Request Verification Section -->
+<div id="RequestVerification" class="content-section" style="display: none;">
+  <h2 data-en="Request Verification" data-ar="طلب التوثيق">Request Verification</h2>
+  
+  <form id="verificationForm" method="POST" action="/submit_verification" enctype="multipart/form-data">
+    <div>
+  <label for="full_name" data-en="Full Name" data-ar="الاسم الكامل" style="margin-bottom: 2px; display: block;">Full Name</label>
+  <input type="text" id="full_name" name="full_name" required>
+</div>
+
+    
+    <div class="custom-file-wrapper">
+<label for="emirates_id_front" data-en="Emirates ID Front" data-ar="الهوية من الأمام">Emirates ID (Front)</label>
+<input type="file" id="emirates_id_front" name="emirates_id_front" accept="image/*" required style="display: none;">
+<label for="emirates_id_front" class="custom-file-label" data-en="Upload Front ID" data-ar="تحميل الهوية الأمامية">Upload Front ID</label>
+<span class="file-name-preview" id="eid-front-preview"></span>
+</div>
+
+    <div class="custom-file-wrapper">
+  <label for="emirates_id_back" data-en="Emirates ID Back" data-ar="الهوية من الخلف">Emirates ID (Back)</label>
+<input type="file" id="emirates_id_back" name="emirates_id_back" accept="image/*" required style="display: none;">
+<label for="emirates_id_back" class="custom-file-label" data-en="Upload Back ID" data-ar="تحميل الهوية الخلفية">Upload Back ID</label>
+<span class="file-name-preview" id="eid-back-preview"></span>
+</div>
+
+    <button id="submitBtn" type="submit" data-en="Submit Request" data-ar="إرسال التوثيق">Submit Verification</button>
+  </form>
+</div>
+
+<!-- Hidden form for logout -->
+<form id="logout-form" action="{{ url_for('logout') }}" method="POST" style="display: none;">
+  <button type="submit" data-en="Logout" data-ar="تسجيل الخروج">Logout</button>
+</form>
+
+
+  <!-- Include Cropper.js CSS and JS -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.12/cropper.min.css" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.12/cropper.min.js"></script>
+  <script src="{{ url_for('static', filename='js/navscript.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/profile.js') }}"></script>
+  <!-- Include Cropper.js for image cropping -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.12/cropper.min.css" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.12/cropper.min.js"></script>
+
+
+
+
+</main>
+
+{% if show_welcome %}
+  {% if not session.get('lang_selected') %}
+    <div id="languageChoiceModal" class="modal-overlay" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); z-index: 9999; display: flex; justify-content: center; align-items: center;">
+      <div class="modal-box" style="background: white; padding: 30px; border-radius: 10px; text-align: center; max-width: 300px;">
+        <h2 data-en="Choose your language" data-ar="اختر لغتك">Choose your language</h2>
+        <div style="margin-top: 30px; display: flex; justify-content: center; gap: 20px;">
+  <button onclick="selectLanguageFirstTime('en')" style="width: 120px; padding: 10px 0; border: 2px solid #0cc4e9; background-color: white; color: #0cc4e9; font-weight: 600; border-radius: 6px; font-size: 16px; cursor: pointer; transition: 0.3s; text-align: center;">
+    English
+  </button>
+  <button onclick="selectLanguageFirstTime('ar')" style="width: 120px; padding: 10px 0; border: 2px solid #0cc4e9; background-color: white; color: #0cc4e9; font-weight: 600; border-radius: 6px; font-size: 16px; cursor: pointer; transition: 0.3s; text-align: center;">
+    العربية
+  </button>
+</div>
+        </div>
+      </div>
+  {% endif %}
+
+<div id="welcomeModal" class="modal-overlay">
+  <div class="modal-box">
+    <h2>Welcome to Dealify!</h2>
+<p>You’ve received <strong>6 free listing credits</strong>.<br>
+  Start posting now!</p>
+    <button onclick="closeModal()" class="modal-btn">Let’s Go 🚀</button>
+  </div>
+</div>
+{% endif %}
+
+
+</body>
+</html>

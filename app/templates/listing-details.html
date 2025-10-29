@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="msapplication-navbutton-color" content="#ffffff">
+  <meta name="apple-mobile-web-app-title" content="Dealify">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/listing-details.css', v='1.5.0') }}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/nav.css', v='1.5.0') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/lucide@0.210.1/dist/lucide.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+  <!-- Main favicon for all browsers -->
+<link rel="icon" href="/static/img/favicon.ico" type="image/x-icon" />
+<!-- Open Graph for WhatsApp, Facebook, LinkedIn -->
+<meta property="og:title" content="Dealify - Buy & Sell Securely" />
+<meta property="og:description" content="Discover trusted listings and secure payments on Dealify." />
+<meta property="og:image" content="https://dealify.ae/static/img/shareimg.png" />
+<meta property="og:url" content="https://dealify.ae" />
+<meta property="og:type" content="website" />
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Dealify - Buy & Sell Securely" />
+<meta name="twitter:description" content="Discover trusted listings and secure payments on Dealify." />
+<meta name="twitter:image" content="https://dealify.ae/static/img/shareimg.png" />
+
+
+    <title>{{ listing.title }}</title>
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="back-btn">
+        <a href="javascript:void(0);" onclick="goBack()">
+  		<img src="{{ url_for('static', filename='img/backbutton.png') }}" alt="Back" style="height: 30px;">
+		</a>
+      </div>
+      <ul class="nav-links">
+        <li class="dropdown">
+          <a href="https://dealify.ae/" class="category en" data-en="Marketplace" data-ar="السوق">Marketplace</a>
+            <li class="mega-dropdown">
+              <i class="dropdown-icon">▼</i>
+
+              </a>
+              <div class="mega-dropdown-content">
+                <!-- Column 1: Properties -->
+                <div class="mega-column">
+                    <h4 data-en="Properties" data-ar="العقارات">Properties</h4>
+                    <a href="{{ url_for('category_page', category_name='Properties For Sale') }}" data-en="For Sale" data-ar="للبيع">For Sale</a>
+                    <a href="{{ url_for('category_page', category_name='Properties For Rent') }}" data-en="For Rent" data-ar="للإيجار">For Rent</a>
+                    <a href="{{ url_for('category_page', category_name='Home & Garden') }}" data-en="Home & Garden" data-ar="المنزل والحديقة">Home & Garden</a>
+                </div>
+                
+                <!-- Column 2: Vehicles -->
+                <div class="mega-column">
+                    <h4 data-en="Vehicles" data-ar="المركبات">Vehicles</h4>
+                    <a href="{{ url_for('category_page', category_name='Cars & Vehicles') }}" data-en="Cars & Vehicles" data-ar="السيارات والمركبات">Cars & Vehicles</a>
+                    <a href="{{ url_for('category_page', category_name='Motorcycles & Scooters') }}" data-en="Motorcycles & Scooters" data-ar="الدراجات النارية والدراجات البخارية">Motorcycles & Scooters</a>
+                </div>
+                
+                <!-- Column 3: Electronics -->
+                <div class="mega-column">
+                    <h4 data-en="Electronics" data-ar="الإلكترونيات">Electronics</h4>
+                    <a href="{{ url_for('category_page', category_name='Electronics') }}" data-en="Electronics" data-ar="الإلكترونيات">Electronics</a>
+                    <a href="{{ url_for('category_page', category_name='Appliances') }}" data-en="Appliances" data-ar="الأجهزة المنزلية">Appliances</a>
+                </div>
+                
+                <!-- Column 4: Fashion -->
+                <div class="mega-column">
+                    <h4 data-en="Fashion" data-ar="الموضة">Fashion</h4>
+                    <a href="{{ url_for('category_page', category_name='Mens Apparel') }}" data-en="Men's Apparel" data-ar="ملابس الرجال">Men's Apparel</a>
+                    <a href="{{ url_for('category_page', category_name='Womens Apparel') }}" data-en="Women's Apparel" data-ar="ملابس النساء">Women's Apparel</a>
+                    <a href="{{ url_for('category_page', category_name='Kids, Toys & Baby') }}" data-en="Kids, Toys & Baby" data-ar="الأطفال، الألعاب والرضع">Kids, Toys & Baby</a>
+                </div>
+                
+                <!-- Column 5: Miscellaneous Categories -->
+                <div class="mega-column">
+                    <h4 data-en="More Categories" data-ar="المزيد من الفئات">More Categories</h4>
+                    <a href="{{ url_for('category_page', category_name='Fitness & Sports Equipment') }}" data-en="Fitness & Sports Equipment" data-ar="معدات اللياقة البدنية والرياضة">Fitness & Sports Equipment</a>
+                    <a href="{{ url_for('category_page', category_name='Professional Services') }}" data-en="Professional Services" data-ar="الخدمات المهنية">Professional Services</a>
+                    <a href="{{ url_for('category_page', category_name='Jobs & Freelance') }}" data-en="Jobs & Freelance" data-ar="وظائف وعمل حر">Jobs & Freelance</a>
+                    <a href="{{ url_for('category_page', category_name='Courses & Training') }}" data-en="Courses & Training" data-ar="الدورات التدريبية والتدريب">Courses & Training</a>
+                    <a href="{{ url_for('category_page', category_name='Books & Stationary') }}" data-en="Books & Stationary" data-ar="الكتب والقرطاسية">Books & Stationary</a>
+                </div>
+                
+                <!-- Column 6: Additional Categories -->
+                <div class="mega-column">
+                    <h4 data-en="Other" data-ar="أخرى">Other</h4>
+                    <a href="{{ url_for('category_page', category_name='Pets & Pet Supplies') }}" data-en="Pets & Pet Supplies" data-ar="الحيوانات الأليفة ومستلزماتها">Pets & Pet Supplies</a>
+                    <a href="{{ url_for('category_page', category_name='Tickets & Experiences') }}" data-en="Tickets & Experiences" data-ar="التذاكر والتجارب">Tickets & Experiences</a>
+                    <a href="{{ url_for('category_page', category_name='Advertising Spaces') }}" data-en="Advertising Spaces" data-ar="مساحات إعلانية">Advertising Spaces</a>
+                    <a href="{{ url_for('category_page', category_name='Miscellaneous') }}" data-en="Miscellaneous" data-ar="متنوع">Miscellaneous</a>
+                </div>
+            </div>
+            
+              </div>
+            </li>
+              </div>
+            </li>
+          </div>
+        </li>
+        <li><a href="{{ url_for('subscriptions') }}" data-en="Packages" data-ar="الاشتراكات">Packages</a></li>
+        <li><a href="{{ url_for('contactus') }}" data-en="Contact Us" data-ar="اتصل بنا">Contact Us</a></li>
+        <li><a href="{{ url_for('aboutus') }}" data-en="About Us" data-ar="معلومات عنا">About Us</a></li>
+      </ul>
+      <div class="navbar-end">
+  <div class="language-switcher">
+    <button id="lang-en" class="language-btn" onclick="changeLanguage('en')" style="display: none;">
+      <img src="{{ url_for('static', filename='img/download (2).png') }}" alt=""> 
+    </button>
+    <button id="lang-ar" class="language-btn" onclick="changeLanguage('ar')" style="display: none;">
+      <img src="{{ url_for('static', filename='img/Flag-Saudi-Arabia.webp') }}" alt=""> 
+    </button>
+  </div>
+        {% if current_user.is_authenticated %}
+        <a href="{{ url_for('profile_panel') }}">
+          <img src="{{ url_for('static', filename='img/avatarblue.png') }}" alt="User Icon" class="user-icon">
+        </a>
+        <span class="user-info-text">
+          {{ current_user.name }} <br>
+         Credits :  {{ listings_count }}
+         </span><br>
+
+        {% else %}
+        <a href="{{ url_for('login') }}" class="profile-link no-image">
+          <img src="{{ url_for('static', filename='img/avatarblue.png') }}" alt="User Icon" class="user-icon">
+          LOGIN
+        </a>
+        {% endif %}
+
+
+
+
+
+
+      </div>
+     
+    </nav>
+  </header>
+<!-- Add this at the top of your body content -->
+<div class="mobile-menu-container">
+  <!-- Mobile Menu Button (Hamburger Icon) -->
+  <div class="mobile-menu-btn" onclick="toggleMenu()">
+    <div class="hamburger-line"></div>
+    <div class="hamburger-line"></div>
+    <div class="hamburger-line"></div>
+  </div>
+
+  <!-- Mobile Side Menu -->
+  <div id="mobileMenu" class="side-menu">
+    <div class="side-menu-header">
+      <img src="{{ url_for('static', filename='img/top right logo.png') }}" alt="Logo" class="menu-logo">
+      <!--<span class="close-btn" onclick="toggleMenu()">×</span>-->
+    </div>
+    <ul class="side-menu-links">
+      <li>
+        <span class="user-info-text custom-style">
+  {{ current_user.name|title }} <br> 
+  <span data-en="Credits" data-ar="الأرصدة">Credits</span> : {{ listings_count }}
+</span><br>
+
+  <a href="{{ url_for('subscriptions') }}" onclick="toggleMenu()" data-en="Packages" data-ar="الباقات">
+    Packages
+  </a>
+</li>
+<li>
+  <a href="{{ url_for('contactus') }}" onclick="toggleMenu()" data-en="Contact Us" data-ar="اتصل بنا">
+    Contact Us
+  </a>
+</li>
+<li>
+  <a href="{{ url_for('aboutus') }}" onclick="toggleMenu()" data-en="About Us" data-ar="معلومات عنا">
+    About Us
+  </a>
+</li>
+
+      {% if current_user.is_authenticated %}
+  <li>
+    <a href="{{ url_for('profile_panel') }}" onclick="toggleMenu()" data-en="Profile" data-ar="الملف الشخصي">
+      Profile
+    </a>
+  </li>
+{% else %}
+  <li>
+    <a href="{{ url_for('login') }}" onclick="toggleMenu()" data-en="Login" data-ar="تسجيل الدخول">
+      Login
+    </a>
+  </li>
+{% endif %}
+    <li class="language-switcher-container">
+  <div class="language-toggle">
+  <button id="sidebar-lang-en" class="language-btn" onclick="changeLanguage('en')">
+    <img src="{{ url_for('static', filename='img/download (2).png') }}" alt="">
+  </button>
+  <button id="sidebar-lang-ar" class="language-btn" onclick="changeLanguage('ar')">
+    <img src="{{ url_for('static', filename='img/Flag-Saudi-Arabia.webp') }}" alt="">
+  </button>
+</div>
+
+
+
+    </ul>
+    
+  </div>
+  <!-- Overlay for when menu is open -->
+  <div id="menuOverlay" class="menu-overlay" onclick="toggleMenu()"></div>
+</div>
+   <main class="container">
+  <div class="listing-wrapper">
+    <div class="listing-container">
+        <!-- Image Gallery -->
+        <div class="gallery-container">
+            <div class="swiper">
+                <div class="swiper-wrapper">
+                    {% if listing.image_paths %}
+                        {% for img in listing.image_paths %}
+                            <div class="swiper-slide">
+                                <img src="{{ url_for('static', filename=img.replace('\\', '/')) }}" 
+                                     alt="{{ listing.title }}"
+                                     onclick="openImageModal('{{ url_for('static', filename=img.replace('\\', '/')) }}')">
+                            </div>
+                        {% endfor %}
+                    {% else %}
+                        <div class="swiper-slide">
+                            <img src="{{ url_for('static', filename='img/placeholder.jpg') }}" 
+                                 alt="No Image"
+                                 onclick="openImageModal('{{ url_for('static', filename='img/placeholder.jpg') }}')">
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+             <div class="image-counter" style="top: 12px; left: 12px; padding: 4px 8px; display: flex; align-items: center; gap: 6px; background: #0cc4e9; border-radius: 6px; color: white; font-weight: 600; font-size: 14px;">
+  							<span style="line-height: 1;">{{ listing.image_paths|length }}</span>
+  							<img src="{{ url_for('static', filename='img/imgicon.png') }}" alt="Image icon" style="height: 14px; filter: brightness(0) invert(1);">
+							</div>
+            <div class="swiper-pagination">
+    {% if listing.image_paths %}
+        {% for _ in listing.image_paths %}
+            <!-- Dot placeholders are now handled by Swiper JS -->
+        {% endfor %}
+    {% else %}
+        <!-- No images fallback handled by Swiper already -->
+    {% endif %}
+</div>
+        </div>
+
+        <!-- Listing Details -->
+        <div class="details-container">
+            <h1 class="listing-title">{{ listing.title }}</h1>
+            <div class="price-container">
+  <div class="price price-inline">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 344.84 299.91" class="aed-icon" aria-hidden="true">
+      <path d="M342.14,140.96l2.7,2.54v-7.72c0-17-11.92-30.84-26.56-30.84h-23.41C278.49,36.7,222.69,0,139.68,0c-52.86,0-59.65,0-109.71,0,0,0,15.03,12.63,15.03,52.4v52.58h-27.68c-5.38,0-10.43-2.08-14.61-6.01l-2.7-2.54v7.72c0,17.01,11.92,30.84,26.56,30.84h18.44s0,29.99,0,29.99h-27.68c-5.38,0-10.43-2.07-14.61-6.01l-2.7-2.54v7.71c0,17,11.92,30.82,26.56,30.82h18.44s0,54.89,0,54.89c0,38.65-15.03,50.06-15.03,50.06h109.71c85.62,0,139.64-36.96,155.38-104.98h32.46c5.38,0,10.43,2.07,14.61,6l2.7,2.54v-7.71c0-17-11.92-30.83-26.56-30.83h-18.9c.32-4.88.49-9.87.49-15s-.18-10.11-.51-14.99h28.17c5.37,0,10.43,2.07,14.61,6.01ZM89.96,15.01h45.86c61.7,0,97.44,27.33,108.1,89.94l-153.96.02V15.01ZM136.21,284.93h-46.26v-89.98l153.87-.02c-9.97,56.66-42.07,88.38-107.61,90ZM247.34,149.96c0,5.13-.11,10.13-.34,14.99l-157.04.02v-29.99l157.05-.02c.22,4.84.33,9.83.33,15Z"/>
+    </svg>
+    <span class="price-value">{{ "{:,.0f}".format(listing.price) }}</span>
+  </div>
+
+  <button class="favorite-btn {% if listing.id in favorite_ids %}active{% endif %}"
+  onclick="{% if current_user.is_authenticated %}toggleFavorite({{ listing.id }}){% else %}window.location.href='{{ url_for('login', next=request.url) }}'{% endif %}">
+    <i class="fa fa-heart favorite-icon" data-id="{{ listing.id }}"></i>
+</button>
+</div>
+
+            
+            <div class="meta-info">
+                <div class="meta-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>{{ listing.city }}, {{ listing.address }}</span>
+                </div>
+                <div class="meta-item">
+                    <i class="fas fa-calendar-alt"></i>
+                    <span>{{ listing.created_at.strftime('%b %d, %Y') }}</span>
+                </div>
+                
+            </div>
+            
+                  <div class="seller-info">
+  <img src="{{ url_for('static', filename='uploads/' + user.avatar) if user.avatar else url_for('static', filename='img/avatarwhite.png') }}"
+       alt="{{ user.name }}"
+       class="seller-avatar">
+
+  <div class="seller-details">
+    <div class="seller-name" onclick="loadSellerListings({{ listing.user_id }}, {{ listing.id }})"
+     style="display: inline-flex; align-items: center; gap: 6px;">
+  {{ user.name }}
+  {% if user.email in verified_admin_emails %}
+    <span class="verified-badge" title="Verified" style="
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 16px;
+  height: 16px;
+  background-color: #ffffff;
+  border-radius: 50%;
+  color: #0cc4e9;
+  font-size: 11px;
+  font-weight: bold;
+  line-height: 1;
+  margin-left: 4px;
+">
+  <span style="position: relative; top: 1px;">✓</span>
+</span>
+  {% endif %}
+</div>
+  </div>
+</div>
+
+
+
+             <div class="action-buttons">
+            <a href="https://wa.me/971{{ user.phone[1:] }}?text=Hello! I’m interested in your listing on Dealify.%0A%0ACould you please share more details?%0A%0A{{ request.url }}"
+   class="btn btn-success"
+   target="_blank">
+  <i class="fab fa-whatsapp"></i>
+  <span data-en="WhatsApp" data-ar="واتساب">WhatsApp</span>
+</a>
+
+
+  <a href="tel:{{ user.phone }}" class="btn btn-primary">
+    <i class="fas fa-phone"></i>
+    <span data-en="Call Seller" data-ar="اتصل بالبائع">Call Seller</span>
+  </a>
+</div>
+
+<div class="secure-trade-box">
+  <a href="https://wa.me/971526006875?text=Hi, I’m interested in buying this item using Dealify SecureTrade.%0A%0A{{ request.url }}"
+     class="secure-whatsapp-link"
+     target="_blank">
+    <span data-en="Buy Safely with Dealify SecureTrade" data-ar="SecureTrade اشترِ بأمان عبر ديليفاي">Buy Safely with Dealify SecureTrade</span>
+  </a>
+  <p class="secure-description">
+    <span data-en="Your payment is safe with Dealify until you receive what you paid for."
+          data-ar="مدفوعاتك آمنة مع ديليفاي حتى تستلم المنتج الذي دفعته.">
+      Your payment is safe with Dealify until you receive what you paid for.
+    </span>
+  </p>
+  <p class="secure-note">
+    <span data-en="* Terms & conditions apply" data-ar="* تطبق الشروط والأحكام">* Terms & conditions apply</span>
+  </p>
+</div>
+
+
+
+            
+<h3 class="section-title" style="border-bottom: none; margin-bottom: 12px; padding-top: 18px;">
+  <span data-en="Description" data-ar="الوصف">Description</span>
+</h3>
+
+            <div class="description-content">
+ 			<div class="desc-grid">
+  {% for line in listing.description.split('\n') if ':' in line %}
+    {% set clean_line = line.lstrip('•').strip() %}
+    {% set parts = clean_line.split(':', 1) %}
+    <div class="desc-row">
+      <span class="desc-label">{{ parts[0].strip() }} :</span>
+      <span class="desc-value">{{ parts[1].strip() }}</span>
+    </div>
+  {% endfor %}
+</div>
+
+
+
+			</div>
+          
+            <div class="social-sharing">
+  <h3 class="section-title" style="border-bottom: none; margin-bottom: 12px; padding-top: 18px;">
+    <span data-en="Share this listing" data-ar="مشاركة هذا الإعلان">Share this listing</span>
+  </h3>
+
+  <div class="share-buttons">
+    <a href="https://wa.me/?text=Found this listing on Dealify — have a look%0A%0A{{ request.url }}"
+       target="_blank"
+       class="share-btn whatsapp-share">
+      <i class="fab fa-whatsapp"></i>
+      <span data-en="WhatsApp" data-ar="واتساب">WhatsApp</span>
+    </a>
+
+    <button onclick="copyToClipboard()" class="share-btn copy-link-btn">
+      <i class="fas fa-link"></i>
+      <span data-en="Copy Link" data-ar="نسخ الرابط">Copy Link</span>
+    </button>
+
+    <a href="https://www.facebook.com/sharer/sharer.php?u={{ request.url }}"
+       target="_blank" class="share-btn facebook-share">
+      <i class="fab fa-facebook-f"></i>
+      <span data-en="Facebook" data-ar="فيسبوك">Facebook</span>
+    </a>
+
+    <a href="https://twitter.com/intent/tweet?url={{ request.url }}&text=Check this out on Dealify!"
+       target="_blank" class="share-btn twitter-share">
+      <i class="fab fa-twitter"></i>
+      <span data-en="Twitter" data-ar="تويتر">Twitter</span>
+    </a>
+  </div>
+</div>
+
+<button class="report-btn" data-listing-id="{{ listing.id }}">
+  <i class="fas fa-flag"></i>
+  <span data-en="Report Listing" data-ar="الإبلاغ عن الإعلان">Report Listing</span>
+</button>
+
+    <!-- Seller Listings Section -->
+    <div id="sellerListings" class="seller-listings">
+        <h3 class="section-title" data-en="More from this seller" data-ar="المزيد من هذا البائع">More from this seller</h3>
+        <div class="products-grid">
+            {% set other_listings = seller_listings | selectattr("id", "ne", listing.id) | list %}
+            {% if other_listings %}
+                {% for item in other_listings %}
+<a href="/listing-item/{{ item.id }}" class="product-card">
+    {% if item.thumb_path %}
+        <img src="{{ url_for('static', filename=item.thumb_path.replace('\\', '/')) }}" 
+             alt="{{ item.title }}" 
+             class="product-image">
+    {% elif item.image_paths %}
+        <img src="{{ url_for('static', filename=item.image_paths[0].replace('\\', '/')) }}" 
+             alt="{{ item.title }}" 
+             class="product-image">
+    {% else %}
+        <img src="{{ url_for('static', filename='img/placeholder.jpg') }}" 
+             alt="No Image" 
+             class="product-image">
+    {% endif %}
+    <div class="product-details">
+        <div class="product-title">{{ item.title }}</div>
+        <div class="price">AED {{ "{:,.0f}".format(item.price) }}</div>
+        <div class="product-location">{{ item.city }}</div>
+    </div>
+</a>
+
+                {% endfor %}
+            {% else %}
+                <p class="no-seller-listings" data-en="No other listings available from this seller" data-ar="لا توجد إعلانات أخرى من هذا البائع">
+  No other listings available from this seller
+</p>
+
+            {% endif %}
+        </div>
+    </div>
+</main>
+
+<!-- Report Modal -->
+<div class="modal" id="report-modal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h3 class="modal-title">Report This Listing</h3>
+            <span class="close-modal" onclick="closeModal()">&times;</span>
+        </div>
+        <form id="report-form" class="report-form">
+            <input type="hidden" id="listing_id" name="listing_id">
+            <div class="form-group">
+                <label class="form-label">Reason for reporting</label>
+                <select class="form-control" name="reason" required>
+                    <option value="" selected disabled>Select a reason</option>
+                    <option value="Inappropriate content">Inappropriate content</option>
+                    <option value="Spam or misleading">Spam or misleading</option>
+                    <option value="Possible scam">Possible scam</option>
+                    <option value="Other">Other</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label class="form-label">Additional details</label>
+                <textarea class="form-control form-textarea" name="details" placeholder="Please provide more details..."></textarea>
+            </div>
+            <button type="submit" class="submit-btn">Submit Report</button>
+        </form>
+    </div>
+</div>
+
+<!-- Image Modal -->
+<div class="image-modal" id="image-modal">
+  <div class="image-wrapper">
+    <span class="close-image-modal" onclick="closeImageModal()">&times;</span>
+    <img id="modal-image" class="modal-image" />
+  </div>
+</div>
+
+<!-- Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+<script src="{{ url_for('static', filename='js/navscript.js') }}"></script>
+<script src="{{ url_for('static', filename='js/listing-details.js') }}"></script>
+
+</body>
+</html>

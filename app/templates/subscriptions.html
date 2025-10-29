@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="msapplication-navbutton-color" content="#ffffff">
+  <meta name="apple-mobile-web-app-title" content="Dealify">
+    <title>Dealify Packages Page</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/subscription.css') }}?v=1.4.8">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/nav.css') }}?v=1.4.8">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+<!-- Main favicon for all browsers -->
+<link rel="icon" href="/static/img/favicon.ico" type="image/x-icon" />
+<!-- Open Graph for WhatsApp, Facebook, LinkedIn -->
+<meta property="og:title" content="Dealify - Buy & Sell Securely" />
+<meta property="og:description" content="Discover trusted listings and secure payments on Dealify." />
+<meta property="og:image" content="https://dealify.ae/static/img/shareimg.png" />
+<meta property="og:url" content="https://dealify.ae" />
+<meta property="og:type" content="website" />
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Dealify - Buy & Sell Securely" />
+<meta name="twitter:description" content="Discover trusted listings and secure payments on Dealify." />
+<meta name="twitter:image" content="https://dealify.ae/static/img/shareimg.png" />
+
+
+
+</head>
+<body class="homepage">
+  <header>
+    <nav class="navbar">
+      <div class="back-btn">
+         <a href="javascript:void(0);" onclick="goBack()">
+  		<img src="{{ url_for('static', filename='img/backbutton.png') }}" alt="Back" style="height: 30px;">
+		</a>
+      </div>
+      <ul class="nav-links">
+        <li class="dropdown">
+          <a href="https://dealify.ae/" class="category en" data-en="Marketplace" data-ar="السوق">Marketplace</a>
+            <li class="mega-dropdown">
+              <i class="dropdown-icon">▼</i>
+
+              </a>
+              <div class="mega-dropdown-content">
+                <!-- Column 1: Properties -->
+                <div class="mega-column">
+                    <h4 data-en="Properties" data-ar="العقارات">Properties</h4>
+                    <a href="{{ url_for('category_page', category_name='Properties For Sale') }}" data-en="For Sale" data-ar="للبيع">For Sale</a>
+                    <a href="{{ url_for('category_page', category_name='Properties For Rent') }}" data-en="For Rent" data-ar="للإيجار">For Rent</a>
+                    <a href="{{ url_for('category_page', category_name='Home & Garden') }}" data-en="Home & Garden" data-ar="المنزل والحديقة">Home & Garden</a>
+                </div>
+                
+                <!-- Column 2: Vehicles -->
+                <div class="mega-column">
+                    <h4 data-en="Vehicles" data-ar="المركبات">Vehicles</h4>
+                    <a href="{{ url_for('category_page', category_name='Cars & Vehicles') }}" data-en="Cars & Vehicles" data-ar="السيارات والمركبات">Cars & Vehicles</a>
+                    <a href="{{ url_for('category_page', category_name='Motorcycles & Scooters') }}" data-en="Motorcycles & Scooters" data-ar="الدراجات النارية والدراجات البخارية">Motorcycles & Scooters</a>
+                </div>
+                
+                <!-- Column 3: Electronics -->
+                <div class="mega-column">
+                    <h4 data-en="Electronics" data-ar="الإلكترونيات">Electronics</h4>
+                    <a href="{{ url_for('category_page', category_name='Electronics') }}" data-en="Electronics" data-ar="الإلكترونيات">Electronics</a>
+                    <a href="{{ url_for('category_page', category_name='Appliances') }}" data-en="Appliances" data-ar="الأجهزة المنزلية">Appliances</a>
+                </div>
+                
+                <!-- Column 4: Fashion -->
+                <div class="mega-column">
+                    <h4 data-en="Fashion" data-ar="الموضة">Fashion</h4>
+                    <a href="{{ url_for('category_page', category_name='Mens Apparel') }}" data-en="Men's Apparel" data-ar="ملابس الرجال">Men's Apparel</a>
+                    <a href="{{ url_for('category_page', category_name='Womens Apparel') }}" data-en="Women's Apparel" data-ar="ملابس النساء">Women's Apparel</a>
+                    <a href="{{ url_for('category_page', category_name='Kids, Toys & Baby') }}" data-en="Kids, Toys & Baby" data-ar="الأطفال، الألعاب والرضع">Kids, Toys & Baby</a>
+                </div>
+                
+                <!-- Column 5: Miscellaneous Categories -->
+                <div class="mega-column">
+                    <h4 data-en="More Categories" data-ar="المزيد من الفئات">More Categories</h4>
+                    <a href="{{ url_for('category_page', category_name='Fitness & Sports Equipment') }}" data-en="Fitness & Sports Equipment" data-ar="معدات اللياقة البدنية والرياضة">Fitness & Sports Equipment</a>
+                    <a href="{{ url_for('category_page', category_name='Professional Services') }}" data-en="Professional Services" data-ar="الخدمات المهنية">Professional Services</a>
+                    <a href="{{ url_for('category_page', category_name='Jobs & Freelance') }}" data-en="Jobs & Freelance" data-ar="وظائف وعمل حر">Jobs & Freelance</a>
+                    <a href="{{ url_for('category_page', category_name='Courses & Training') }}" data-en="Courses & Training" data-ar="الدورات التدريبية والتدريب">Courses & Training</a>
+                    <a href="{{ url_for('category_page', category_name='Books & Stationary') }}" data-en="Books & Stationary" data-ar="الكتب والقرطاسية">Books & Stationary</a>
+                </div>
+                
+                <!-- Column 6: Additional Categories -->
+                <div class="mega-column">
+                    <h4 data-en="Other" data-ar="أخرى">Other</h4>
+                    <a href="{{ url_for('category_page', category_name='Pets & Pet Supplies') }}" data-en="Pets & Pet Supplies" data-ar="الحيوانات الأليفة ومستلزماتها">Pets & Pet Supplies</a>
+                    <a href="{{ url_for('category_page', category_name='Tickets & Experiences') }}" data-en="Tickets & Experiences" data-ar="التذاكر والتجارب">Tickets & Experiences</a>
+                    <a href="{{ url_for('category_page', category_name='Advertising Spaces') }}" data-en="Advertising Spaces" data-ar="مساحات إعلانية">Advertising Spaces</a>
+                    <a href="{{ url_for('category_page', category_name='Miscellaneous') }}" data-en="Miscellaneous" data-ar="متنوع">Miscellaneous</a>
+                </div>
+            </div>
+            
+              </div>
+            </li>
+              </div>
+            </li>
+          </div>
+        </li>
+        <li><a href="{{ url_for('subscriptions') }}" data-en="Packages" data-ar="الاشتراكات">Packages</a></li>
+        <li><a href="{{ url_for('contactus') }}" data-en="Contact Us" data-ar="اتصل بنا">Contact Us</a></li>
+        <li><a href="{{ url_for('aboutus') }}" data-en="About Us" data-ar="معلومات عنا">About Us</a></li>
+      </ul>
+      <div class="navbar-end">
+  <div class="language-switcher">
+    <button id="lang-en" class="language-btn" onclick="changeLanguage('en')" style="display: none;">
+      <img src="{{ url_for('static', filename='img/download (2).png') }}" alt=""> 
+    </button>
+    <button id="lang-ar" class="language-btn" onclick="changeLanguage('ar')" style="display: none;">
+      <img src="{{ url_for('static', filename='img/Flag-Saudi-Arabia.webp') }}" alt=""> 
+    </button>
+  </div>
+        {% if current_user.is_authenticated %}
+        <a href="{{ url_for('profile_panel') }}">
+          <img src="{{ url_for('static', filename='img/avatarblue.png') }}" alt="User Icon" class="user-icon">
+        </a>
+       <span class="user-info-text">
+          {{ current_user.name }} <br>
+         Credits :  {{ listings_count }}
+         </span><br>
+
+        {% else %}
+        <a href="{{ url_for('login') }}" class="profile-link no-image">
+          <img src="{{ url_for('static', filename='img/avatarblue.png') }}" alt="User Icon" class="user-icon">
+          LOGIN
+        </a>
+        {% endif %}
+
+
+
+
+
+
+      </div>
+  
+    </nav>
+  </header>
+<!-- Add this at the top of your body content -->
+<div class="mobile-menu-container">
+  <!-- Mobile Menu Button (Hamburger Icon) -->
+  <div class="mobile-menu-btn" onclick="toggleMenu()">
+    <div class="hamburger-line"></div>
+    <div class="hamburger-line"></div>
+    <div class="hamburger-line"></div>
+  </div>
+
+  <!-- Mobile Side Menu -->
+  <div id="mobileMenu" class="side-menu">
+    <div class="side-menu-header">
+      <img src="{{ url_for('static', filename='img/top right logo.png') }}" alt="Logo" class="menu-logo">
+      <!--<span class="close-btn" onclick="toggleMenu()">×</span>-->
+    </div>
+    <ul class="side-menu-links">
+      <li>
+        <span class="user-info-text custom-style">
+  {{ current_user.name|title }} <br> 
+  <span data-en="Credits" data-ar="الأرصدة">Credits</span> : {{ listings_count }}
+</span><br>
+
+  <a href="{{ url_for('subscriptions') }}" onclick="toggleMenu()" data-en="Packages" data-ar="الباقات">
+    Packages
+  </a>
+</li>
+<li>
+  <a href="{{ url_for('contactus') }}" onclick="toggleMenu()" data-en="Contact Us" data-ar="اتصل بنا">
+    Contact Us
+  </a>
+</li>
+<li>
+  <a href="{{ url_for('aboutus') }}" onclick="toggleMenu()" data-en="About Us" data-ar="معلومات عنا">
+    About Us
+  </a>
+</li>
+
+      {% if current_user.is_authenticated %}
+  <li>
+    <a href="{{ url_for('profile_panel') }}" onclick="toggleMenu()" data-en="Profile" data-ar="الملف الشخصي">
+      Profile
+    </a>
+  </li>
+{% else %}
+  <li>
+    <a href="{{ url_for('login') }}" onclick="toggleMenu()" data-en="Login" data-ar="تسجيل الدخول">
+      Login
+    </a>
+  </li>
+{% endif %}
+
+     <li class="language-switcher-container">
+  <div class="language-toggle">
+  <button id="sidebar-lang-en" class="language-btn" onclick="changeLanguage('en')">
+    <img src="{{ url_for('static', filename='img/download (2).png') }}" alt="">
+  </button>
+  <button id="sidebar-lang-ar" class="language-btn" onclick="changeLanguage('ar')">
+    <img src="{{ url_for('static', filename='img/Flag-Saudi-Arabia.webp') }}" alt="">
+  </button>
+</div>
+
+
+
+    </ul>
+    
+  </div>
+
+
+  <!-- Overlay for when menu is open -->
+  <div id="menuOverlay" class="menu-overlay" onclick="toggleMenu()"></div>
+</div>
+    <main>
+      <div class="credits-box">
+  <div class="credit-info"
+       data-en="Credits Available : {{ listings_count }}"
+       data-ar="رصيدك: {{ listings_count }}">
+    <strong>Credits Available: </strong>
+    <span>{{ listings_count }}</span>
+  </div>
+</div>
+
+      <div class="subscription-container">
+        
+      
+        <!-- Dealify Basic Plan -->
+<div class="plan dealify-basic hidden-plan">
+  <h2 class="allow-wrap" data-en="DEALIFY\nONE" data-ar="دياليفاي<br>واحد"></h2>
+
+  <ul>
+  <li class="category" style="white-space: normal;" 
+      data-en="<strong>1 Credit<br>Easy Choice</strong>" 
+      data-ar="<strong>1 رصيد<br>خيار سهل</strong>">
+  </li>
+</ul>
+
+
+  <p class="price price-centered">
+  <span class="price-inline">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 344.84 299.91" class="aed-icon" aria-hidden="true">
+      <path d="M342.14,140.96l2.7,2.54v-7.72c0-17-11.92-30.84-26.56-30.84h-23.41C278.49,36.7,222.69,0,139.68,0c-52.86,0-59.65,0-109.71,0,0,0,15.03,12.63,15.03,52.4v52.58h-27.68c-5.38,0-10.43-2.08-14.61-6.01l-2.7-2.54v7.72c0,17.01,11.92,30.84,26.56,30.84h18.44s0,29.99,0,29.99h-27.68c-5.38,0-10.43-2.07-14.61-6.01l-2.7-2.54v7.71c0,17,11.92,30.82,26.56,30.82h18.44s0,54.89,0,54.89c0,38.65-15.03,50.06-15.03,50.06h109.71c85.62,0,139.64-36.96,155.38-104.98h32.46c5.38,0,10.43,2.07,14.61,6l2.7,2.54v-7.71c0-17-11.92-30.83-26.56-30.83h-18.9c.32-4.88.49-9.87.49-15s-.18-10.11-.51-14.99h28.17c5.37,0,10.43,2.07,14.61,6.01ZM89.96,15.01h45.86c61.7,0,97.44,27.33,108.1,89.94l-153.96.02V15.01ZM136.21,284.93h-46.26v-89.98l153.87-.02c-9.97,56.66-42.07,88.38-107.61,90ZM247.34,149.96c0,5.13-.11,10.13-.34,14.99l-157.04.02v-29.99l157.05-.02c.22,4.84.33,9.83.33,15Z"/>
+    </svg>
+    10
+  </span>
+</p>
+
+
+<form id="basicPlanForm" onsubmit="return false;">
+  <input type="hidden" name="package_id" value="1">
+  {% if 'Appilix' in request.headers.get('User-Agent', '') %}
+    <button class="button" type="button"
+      data-en="Claim Credits" data-ar="احصل على الرصيد"      
+      onclick="appilixPurchaseProduct('dealify_1_credit', 'consumable', 'https://dealify.ae/appilix-purchase-verify?user_id={{ current_user.id }}&package_id=1')">
+      Claim Credits
+    </button>
+  {% else %}
+    <button class="button" type="button"
+      data-en="Claim Credits" data-ar="احصل على الرصيد"
+      onclick="handlePayment(1, 10, 'DEALIFY ONE', 1, currentUserId)">
+      Claim Credits
+    </button>
+  {% endif %}
+</form>
+
+
+</div>
+
+      
+<!-- Dealify Starter Plan -->
+<div class="plan dealify-starter hidden-plan">
+  <div class="offer-bar">
+    <i class="bi bi-tag-fill"></i>
+    10% OFF
+  </div>
+
+  <h2 class="allow-wrap" data-en="DEALIFY\nTHREE" data-ar="دياليفاي<br>ثلاثة"></h2>
+
+  <ul>
+  <li class="category" style="white-space: pre-line" 
+    data-en="<strong>3 Credits<br>Strong Pick</strong>" 
+    data-ar="<strong>3 أرصدة<br>عرض قوي</strong>">
+</li>
+</ul>
+
+  <p class="price price-centered">
+    <span class="price-inline">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 344.84 299.91" class="aed-icon" aria-hidden="true">
+        <path d="M342.14,140.96l2.7,2.54v-7.72c0-17-11.92-30.84-26.56-30.84h-23.41C278.49,36.7,222.69,0,139.68,0c-52.86,0-59.65,0-109.71,0,0,0,15.03,12.63,15.03,52.4v52.58h-27.68c-5.38,0-10.43-2.08-14.61-6.01l-2.7-2.54v7.72c0,17.01,11.92,30.84,26.56,30.84h18.44s0,29.99,0,29.99h-27.68c-5.38,0-10.43-2.07-14.61-6.01l-2.7-2.54v7.71c0,17,11.92,30.82,26.56,30.82h18.44s0,54.89,0,54.89c0,38.65-15.03,50.06-15.03,50.06h109.71c85.62,0,139.64-36.96,155.38-104.98h32.46c5.38,0,10.43,2.07,14.61,6l2.7,2.54v-7.71c0-17-11.92-30.83-26.56-30.83h-18.9c.32-4.88.49-9.87.49-15s-.18-10.11-.51-14.99h28.17c5.37,0,10.43,2.07,14.61,6.01ZM89.96,15.01h45.86c61.7,0,97.44,27.33,108.1,89.94l-153.96.02V15.01ZM136.21,284.93h-46.26v-89.98l153.87-.02c-9.97,56.66-42.07,88.38-107.61,90ZM247.34,149.96c0,5.13-.11,10.13-.34,14.99l-157.04.02v-29.99l157.05-.02c.22,4.84.33,9.83.33,15Z"/>
+      </svg>
+      <span class="price-value">27</span>
+    </span>
+  </p>
+
+<form id="starterPlanForm" onsubmit="return false;">
+  <input type="hidden" name="package_id" value="2">
+  {% if 'Appilix' in request.headers.get('User-Agent', '') %}
+    <button class="button" type="button"
+      data-en="Claim Credits" data-ar="احصل على الرصيد"
+      onclick="appilixPurchaseProduct('dealify_3_credits', 'consumable', 'https://dealify.ae/appilix-purchase-verify?user_id={{ current_user.id }}&package_id=2')">
+      Claim Credits
+    </button>
+  {% else %}
+    <button class="button" type="button"
+      data-en="Claim Credits" data-ar="احصل على الرصيد"
+      onclick="handlePayment(2, 27, 'DEALIFY THREE', 3, currentUserId)">
+      Claim Credits
+    </button>
+  {% endif %}
+</form>
+
+</div>
+
+      
+        <!-- Dealify Professional Plan -->
+<div class="plan dealify-pro hidden-plan">
+  <div class="offer-bar">
+    <i class="bi bi-tag-fill"></i>
+    15% OFF
+  </div>
+
+  <h2 class="allow-wrap" data-en="DEALIFY\nSIX" data-ar="دياليفاي<br>ستة"></h2>
+
+  <ul>
+  <li class="category" style="white-space: normal;"
+      data-en="<strong>6 Credits<br>Popular Buy</strong>"
+      data-ar="<strong>6 أرصدة<br>شراء شائع</strong>">
+  </li>
+</ul>
+
+
+  <p class="price price-centered">
+    <span class="price-inline">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 344.84 299.91" class="aed-icon" aria-hidden="true">
+        <path d="M342.14,140.96l2.7,2.54v-7.72c0-17-11.92-30.84-26.56-30.84h-23.41C278.49,36.7,222.69,0,139.68,0c-52.86,0-59.65,0-109.71,0,0,0,15.03,12.63,15.03,52.4v52.58h-27.68c-5.38,0-10.43-2.08-14.61-6.01l-2.7-2.54v7.72c0,17.01,11.92,30.84,26.56,30.84h18.44s0,29.99,0,29.99h-27.68c-5.38,0-10.43-2.07-14.61-6.01l-2.7-2.54v7.71c0,17,11.92,30.82,26.56,30.82h18.44s0,54.89,0,54.89c0,38.65-15.03,50.06-15.03,50.06h109.71c85.62,0,139.64-36.96,155.38-104.98h32.46c5.38,0,10.43,2.07,14.61,6l2.7,2.54v-7.71c0-17-11.92-30.83-26.56-30.83h-18.9c.32-4.88.49-9.87.49-15s-.18-10.11-.51-14.99h28.17c5.37,0,10.43,2.07,14.61,6.01ZM89.96,15.01h45.86c61.7,0,97.44,27.33,108.1,89.94l-153.96.02V15.01ZM136.21,284.93h-46.26v-89.98l153.87-.02c-9.97,56.66-42.07,88.38-107.61,90ZM247.34,149.96c0,5.13-.11,10.13-.34,14.99l-157.04.02v-29.99l157.05-.02c.22,4.84.33,9.83.33,15Z"/>
+      </svg>
+      <span class="price-value">51</span>
+    </span>
+  </p>
+
+<form id="proPlanForm" onsubmit="return false;">
+  <input type="hidden" name="package_id" value="3">
+  {% if 'Appilix' in request.headers.get('User-Agent', '') %}
+    <button class="button" type="button"
+      data-en="Claim Credits" data-ar="احصل على الرصيد"
+      onclick="appilixPurchaseProduct('dealify_6_credits', 'consumable', 'https://dealify.ae/appilix-purchase-verify?user_id={{ current_user.id }}&package_id=3')">
+      Claim Credits
+    </button>
+  {% else %}
+    <button class="button" type="button"
+      data-en="Claim Credits" data-ar="احصل على الرصيد"
+      onclick="handlePayment(3, 51, 'DEALIFY SIX', 6, currentUserId)">
+      Claim Credits
+    </button>
+  {% endif %}
+</form>
+
+</div>
+
+<!-- Dealify Premium Plan -->
+<div class="plan dealify-premium hidden-plan">
+  <div class="offer-bar">
+    <i class="bi bi-tag-fill"></i>
+    20% OFF
+  </div>
+
+  <h2 class="allow-wrap" data-en="DEALIFY\nTWELVE" data-ar="دياليفاي<br>اثنا عشر"></h2>
+
+  <ul>
+  <li class="category" style="white-space: pre-line" 
+      data-en="<b>12 Credits</b>\n<b>Best Value</b>" 
+      data-ar="<b>12 رصيد</b>\n<b>أفضل قيمة</b>">
+    <b>12 Credits</b><br><b>Best Value</b>
+  </li>
+</ul>
+
+  <p class="price price-centered">
+    <span class="price-inline">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 344.84 299.91" class="aed-icon" aria-hidden="true">
+        <path d="M342.14,140.96l2.7,2.54v-7.72c0-17-11.92-30.84-26.56-30.84h-23.41C278.49,36.7,222.69,0,139.68,0c-52.86,0-59.65,0-109.71,0,0,0,15.03,12.63,15.03,52.4v52.58h-27.68c-5.38,0-10.43-2.08-14.61-6.01l-2.7-2.54v7.72c0,17.01,11.92,30.84,26.56,30.84h18.44s0,29.99,0,29.99h-27.68c-5.38,0-10.43-2.07-14.61-6.01l-2.7-2.54v7.71c0,17,11.92,30.82,26.56,30.82h18.44s0,54.89,0,54.89c0,38.65-15.03,50.06-15.03,50.06h109.71c85.62,0,139.64-36.96,155.38-104.98h32.46c5.38,0,10.43,2.07,14.61,6l2.7,2.54v-7.71c0-17-11.92-30.83-26.56-30.83h-18.9c.32-4.88.49-9.87.49-15s-.18-10.11-.51-14.99h28.17c5.37,0,10.43,2.07,14.61,6.01ZM89.96,15.01h45.86c61.7,0,97.44,27.33,108.1,89.94l-153.96.02V15.01ZM136.21,284.93h-46.26v-89.98l153.87-.02c-9.97,56.66-42.07,88.38-107.61,90ZM247.34,149.96c0,5.13-.11,10.13-.34,14.99l-157.04.02v-29.99l157.05-.02c.22,4.84.33,9.83.33,15Z"/>
+      </svg>
+      <span class="price-value">96</span>
+    </span>
+  </p>
+
+<form id="premiumPlanForm" onsubmit="return false;">
+  <input type="hidden" name="package_id" value="4">
+  {% if 'Appilix' in request.headers.get('User-Agent', '') %}
+    <button class="button" type="button"
+      data-en="Claim Credits" data-ar="احصل على الرصيد"
+      onclick="appilixPurchaseProduct('dealify_12_credits', 'consumable', 'https://dealify.ae/appilix-purchase-verify?user_id={{ current_user.id }}&package_id=4')">
+      Claim Credits
+    </button>
+  {% else %}
+    <button class="button" type="button"
+      data-en="Claim Credits" data-ar="احصل على الرصيد"
+      onclick="handlePayment(4, 96, 'DEALIFY TWELVE', 12, currentUserId)">
+      Claim Credits
+    </button>
+  {% endif %}
+</form>
+
+</div>
+
+<div class="listing-system">
+  <h3 
+  style="font-size: 1.3rem; font-weight: 700; color: #000000; margin-bottom: 1rem;" 
+  data-en='Your <span class="highlight-blue">Credits</span>, Your <span class="highlight-blue">Control</span>' 
+  data-ar='أنت <span class="highlight-blue">تتحكم</span> بأرصِدتك'>
+  Your <span class="highlight-blue">Credits</span>, Your <span class="highlight-blue">Control</span>
+</h3>
+  <div style="background-color: #979492; border-radius: 6px; padding: 1.5rem; box-shadow: 0 1px 8px rgba(0,0,0,0.05);">
+    
+   <p style="font-size: 0.95rem; font-weight: 600; line-height: 1.5; color: #ffffff; margin-bottom: 1rem;"
+   data-en='You get <strong>6</strong> <strong>free</strong> credits just for joining — that’s <strong>12</strong> listings to start<br>(1 credit = 2 standard listings)<br><br>Need more? Pick the plan that fits your hustle.'
+   data-ar='تحصل على <strong>6</strong> أرصدة <strong>مجانية</strong> عند التسجيل — أي <strong>12</strong> إعلانًا كبداية<br>(كل رصيد = إعلانين عاديين)<br><br>وتقدر تشتري أكثر حسب احتياجك.'>
+  You get <strong>6</strong> <strong>free</strong> credits just for joining — that’s <strong>12</strong> listings to start<br>(1 credit = 2 standard listings)<br><br>Need more? Pick the plan that fits your hustle.
+</p>
+
+    <div style="display: flex; justify-content: center; gap: 1rem; margin: 1rem 0; flex-wrap: wrap;">
+      
+      <div style="background: white; padding: 1rem; border-radius: 4px; box-shadow: 0 1px 5px rgba(0,0,0,0.05); min-width: 120px;">
+        <div style="font-size: 1.5rem; color: #0cc4e9; font-weight: 600;" 
+             data-en="0.5" 
+             data-ar="0.5">
+          0.5
+        </div>
+        <div style="font-size: 0.85rem; color: #000000;" 
+             data-en="Standard Listing" 
+             data-ar="إعلان عادي">
+          Standard Listing
+        </div>
+      </div>
+
+      <div style="background: white; padding: 1rem; border-radius: 4px; box-shadow: 0 1px 5px rgba(0,0,0,0.05); min-width: 120px;">
+        <div style="font-size: 1.5rem; color: #0cc4e9; font-weight: 600;" 
+             data-en="6" 
+             data-ar="6">
+          6
+        </div>
+        <div style="font-size: 0.85rem; color: #000000;" 
+             data-en="Car Listing" 
+             data-ar="إعلان سيارات">
+          Car Listing
+        </div>
+      </div>
+
+      <div style="background: white; padding: 1rem; border-radius: 4px; box-shadow: 0 1px 5px rgba(0,0,0,0.05); min-width: 120px;">
+        <div style="font-size: 1.5rem; color: #0cc4e9; font-weight: 600;" 
+             data-en="12" 
+             data-ar="12">
+          12
+        </div>
+        <div style="font-size: 0.85rem; color: #000000;" 
+             data-en="Property Listing" 
+             data-ar="إعلان عقارات">
+          Property Listing
+        </div>
+      </div>
+
+    </div>
+
+    <p style="font-size: 0.9rem; font-weight: 600; line-height: 1.5; color: #ffffff; margin-bottom: 1rem;" 
+       data-en="Bulk purchases save you money. See our packages for details." 
+       data-ar="الشراء بالجملة يوفر لك المال. راجع باقاتنا لمزيد من التفاصيل.">
+      Bulk purchases save you money. See our packages for details.
+    </p>
+
+   <a href="#" 
+   class="package-details-btn" 
+   onclick="scrollToTop(event)"
+   style="display: inline-block; font-size: 0.9rem; font-weight: 600; padding: 0.6rem 1.2rem; background-color: #0cc4e9; color: #ffffff; text-decoration: none; border-radius: 3px;"
+   data-en="Package Details" 
+   data-ar="تفاصيل الباقة">
+   Package Details
+</a>
+
+
+
+  </div>
+</div>
+
+
+  </div>
+</div>
+
+
+    
+        
+</main>
+<footer>
+  <div class="footer-container">
+    <!-- Left Section: Logo -->
+    <div class="footer-logo">
+      <img src="{{ url_for('static', filename='img/footer logo.png') }}" alt="Dealify UAE Logo">
+    </div>
+
+    <!-- Center Section: Links -->
+    <div class="footer-links">
+      <div>
+        
+      </div>
+      <div> 
+        <ul>
+          <li><a href="{{ url_for('terms') }}">Terms & Conditions</a></li>
+          <li><a href="{{ url_for('privacy') }}">Privacy Policy</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Right Section: Social Icons -->
+    <div class="social-icons">
+      <a href="https://www.facebook.com/profile.php?id=61571835762109" target="_blank">
+        <img src="{{ url_for('static', filename='img/fb.png') }}" alt="Facebook">
+      </a>
+      <a href="https://www.instagram.com/dealifyuae/" target="_blank">
+        <img src="{{ url_for('static', filename='img/icons8-instagram-480[1].png') }}" alt="Instagram">
+      </a>
+      <a href="https://x.com/dealifyuae" target="_blank">
+        <img src="{{ url_for('static', filename='img/twitter.png') }}" alt="Twitter (X)">
+      </a>
+      <a href="https://www.tiktok.com/@dealifyuae?_t=8sM1rqyTtns&_r=1" class="tiktok" target="_blank">
+        <img
+          src="{{ url_for('static', filename='img/tiktok-round-white-icon.png') }}"
+          alt="TikTok">
+      </a>
+      <a href="https://wa.me/message/OIT32JOSRVQCL1" target="_blank">
+        <img src="{{ url_for('static', filename='img/733641.png') }}" alt="WhatsApp">
+      </a>
+      <a href="mailto:info@dealify.ae">
+        <img src="{{ url_for('static', filename='img/666162.png') }}" alt="Email">
+      </a>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>Copyright © 2025 Dealify UAE</p>
+    <p>Powered by @Tech Crafts.</p>
+    <p>@Licensed by DED DUBAI.</p>
+  </div>
+</footer>
+
+    <script src="https://js.stripe.com/v3/"></script>
+    <script src="{{ url_for('static', filename='js/subscriptions.js') }}"></script>
+
+
+</body>
+</html>

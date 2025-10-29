@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Payment Successful</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/payment_success.css', v='1.4.7') }}">
+    
+</head>
+<body>
+    <div class="page-wrapper">
+    <div class="success-card">
+    <div class="success-icon">
+        <i class="bi bi-check-circle-fill"></i>
+    </div>
+    <h1 data-en="Payment Successful!" data-ar="تم الدفع بنجاح">Payment Successful!</h1>
+    <p class="success-message" 
+       data-en="Your credits have been added to your account. You can now sell items!" 
+       data-ar="! تمت إضافة الأرصدة إلى حسابك. يمكنك الآن بيع العناصر">
+       Your credits have been added to your account. You can now sell items!
+    </p>
+    <div class="button-group">
+        <a href="{{ url_for('index') }}" 
+           class="button button-home" 
+           data-en="Return to Home" 
+           data-ar="العودة إلى الصفحة الرئيسية">
+           Return to Home
+        </a>
+        <a href="https://dealify.ae/listing" 
+           class="button button-listing" 
+           data-en="Add Listing" 
+           data-ar="إضافة إعلان">
+           Add Listing
+        </a>
+    </div>
+</div>
+
+
+<script src="{{ url_for('static', filename='js/payment_success.js') }}"></script>
+
+</body>
+</html>

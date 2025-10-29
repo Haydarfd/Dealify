@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  	<meta name="theme-color" content="#ffffff">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="msapplication-navbutton-color" content="#ffffff">
+  <meta name="apple-mobile-web-app-title" content="Dealify">
+    <title>Dealify About Us</title>
+  	<link rel="stylesheet" href="{{ url_for('static', filename='style.css', v='1.4.7') }}">
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/nav.css', v='1.4.7') }}">
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/about.css', v='1.4.7') }}">
+	<!-- Main favicon for all browsers -->
+<link rel="icon" href="/static/img/favicon.ico" type="image/x-icon" />
+<!-- Open Graph for Facebook, WhatsApp, LinkedIn -->
+<meta property="og:title" content="Dealify - Buy & Sell Securely" />
+<meta property="og:description" content="Discover trusted listings and secure payments on Dealify." />
+<meta property="og:image" content="https://dealify.ae/static/img/shareimg.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:url" content="https://dealify.ae" />
+<meta property="og:type" content="website" />
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Dealify - Buy & Sell Securely" />
+<meta name="twitter:description" content="Discover trusted listings and secure payments on Dealify." />
+<meta name="twitter:image" content="https://dealify.ae/static/img/shareimg.png" />
+
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="back-btn">
+        <a href="javascript:void(0);" onclick="goBack()">
+  		<img src="{{ url_for('static', filename='img/backbutton.png') }}" alt="Back" style="height: 30px;">
+		</a>
+      </div>
+      <ul class="nav-links">
+        <li class="dropdown">
+          <a href="https://dealify.ae/" class="category en" data-en="Marketplace" data-ar="السوق">Marketplace</a>
+            <li class="mega-dropdown">
+              <i class="dropdown-icon">▼</i>
+
+              </a>
+              <div class="mega-dropdown-content">
+                <!-- Column 1: Properties -->
+                <div class="mega-column">
+                    <h4 data-en="Properties" data-ar="العقارات">Properties</h4>
+                    <a href="{{ url_for('category_page', category_name='Properties For Sale') }}" data-en="For Sale" data-ar="للبيع">For Sale</a>
+                    <a href="{{ url_for('category_page', category_name='Properties For Rent') }}" data-en="For Rent" data-ar="للإيجار">For Rent</a>
+                    <a href="{{ url_for('category_page', category_name='Home & Garden') }}" data-en="Home & Garden" data-ar="المنزل والحديقة">Home & Garden</a>
+                </div>
+                
+                <!-- Column 2: Vehicles -->
+                <div class="mega-column">
+                    <h4 data-en="Vehicles" data-ar="المركبات">Vehicles</h4>
+                    <a href="{{ url_for('category_page', category_name='Cars & Vehicles') }}" data-en="Cars & Vehicles" data-ar="السيارات والمركبات">Cars & Vehicles</a>
+                    <a href="{{ url_for('category_page', category_name='Motorcycles & Scooters') }}" data-en="Motorcycles & Scooters" data-ar="الدراجات النارية والدراجات البخارية">Motorcycles & Scooters</a>
+                </div>
+                
+                <!-- Column 3: Electronics -->
+                <div class="mega-column">
+                    <h4 data-en="Electronics" data-ar="الإلكترونيات">Electronics</h4>
+                    <a href="{{ url_for('category_page', category_name='Electronics') }}" data-en="Electronics" data-ar="الإلكترونيات">Electronics</a>
+                    <a href="{{ url_for('category_page', category_name='Appliances') }}" data-en="Appliances" data-ar="الأجهزة المنزلية">Appliances</a>
+                </div>
+                
+                <!-- Column 4: Fashion -->
+                <div class="mega-column">
+                    <h4 data-en="Fashion" data-ar="الموضة">Fashion</h4>
+                    <a href="{{ url_for('category_page', category_name='Mens Apparel') }}" data-en="Men's Apparel" data-ar="ملابس الرجال">Men's Apparel</a>
+                    <a href="{{ url_for('category_page', category_name='Womens Apparel') }}" data-en="Women's Apparel" data-ar="ملابس النساء">Women's Apparel</a>
+                    <a href="{{ url_for('category_page', category_name='Kids, Toys & Baby') }}" data-en="Kids, Toys & Baby" data-ar="الأطفال، الألعاب والرضع">Kids, Toys & Baby</a>
+                </div>
+                
+                <!-- Column 5: Miscellaneous Categories -->
+                <div class="mega-column">
+                    <h4 data-en="More Categories" data-ar="المزيد من الفئات">More Categories</h4>
+                    <a href="{{ url_for('category_page', category_name='Fitness & Sports Equipment') }}" data-en="Fitness & Sports Equipment" data-ar="معدات اللياقة البدنية والرياضة">Fitness & Sports Equipment</a>
+                    <a href="{{ url_for('category_page', category_name='Professional Services') }}" data-en="Professional Services" data-ar="الخدمات المهنية">Professional Services</a>
+                    <a href="{{ url_for('category_page', category_name='Jobs & Freelance') }}" data-en="Jobs & Freelance" data-ar="وظائف وعمل حر">Jobs & Freelance</a>
+                    <a href="{{ url_for('category_page', category_name='Courses & Training') }}" data-en="Courses & Training" data-ar="الدورات التدريبية والتدريب">Courses & Training</a>
+                    <a href="{{ url_for('category_page', category_name='Books & Stationary') }}" data-en="Books & Stationary" data-ar="الكتب والقرطاسية">Books & Stationary</a>
+                </div>
+                
+                <!-- Column 6: Additional Categories -->
+                <div class="mega-column">
+                    <h4 data-en="Other" data-ar="أخرى">Other</h4>
+                    <a href="{{ url_for('category_page', category_name='Pets & Pet Supplies') }}" data-en="Pets & Pet Supplies" data-ar="الحيوانات الأليفة ومستلزماتها">Pets & Pet Supplies</a>
+                    <a href="{{ url_for('category_page', category_name='Tickets & Experiences') }}" data-en="Tickets & Experiences" data-ar="التذاكر والتجارب">Tickets & Experiences</a>
+                    <a href="{{ url_for('category_page', category_name='Advertising Spaces') }}" data-en="Advertising Spaces" data-ar="مساحات إعلانية">Advertising Spaces</a>
+                    <a href="{{ url_for('category_page', category_name='Miscellaneous') }}" data-en="Miscellaneous" data-ar="متنوع">Miscellaneous</a>
+                </div>
+            </div>
+            
+              </div>
+            </li>
+              </div>
+            </li>
+          </div>
+        </li>
+        <li><a href="{{ url_for('subscriptions') }}" data-en="Packages" data-ar="الاشتراكات">Subscriptions</a></li>
+        <li><a href="{{ url_for('contactus') }}" data-en="Contact Us" data-ar="اتصل بنا">Contact Us</a></li>
+        <li><a href="{{ url_for('aboutus') }}" data-en="About Us" data-ar="معلومات عنا">About Us</a></li>
+      </ul>
+      <div class="navbar-end">
+  <div class="language-switcher">
+    <button id="lang-en" class="language-btn" onclick="changeLanguage('en')" style="display: none;">
+      <img src="{{ url_for('static', filename='img/download (2).png') }}" alt=""> 
+    </button>
+    <button id="lang-ar" class="language-btn" onclick="changeLanguage('ar')" style="display: none;">
+      <img src="{{ url_for('static', filename='img/Flag-Saudi-Arabia.webp') }}" alt=""> 
+    </button>
+  </div>
+        {% if current_user.is_authenticated %}
+        <a href="{{ url_for('profile_panel') }}">
+          <img src="{{ url_for('static', filename='img/avatarblue.png') }}" alt="User Icon" class="user-icon">
+        </a>
+        <span class="user-info-text">
+          {{ current_user.name }} <br>
+         Credits :  {{ listings_count }}
+         </span><br>
+
+        {% else %}
+        <a href="{{ url_for('login') }}" class="profile-link no-image">
+          <img src="{{ url_for('static', filename='img/avatarblue.png') }}" alt="User Icon" class="user-icon">
+          LOGIN
+        </a>
+        {% endif %}
+
+
+
+
+
+
+      </div>
+    
+    </nav>
+  </header>
+<!-- Add this at the top of your body content -->
+<div class="mobile-menu-container">
+  <!-- Mobile Menu Button (Hamburger Icon) -->
+  <div class="mobile-menu-btn" onclick="toggleMenu()">
+    <div class="hamburger-line"></div>
+    <div class="hamburger-line"></div>
+    <div class="hamburger-line"></div>
+  </div>
+
+
+  <!-- Mobile Side Menu -->
+  <div id="mobileMenu" class="side-menu">
+    <div class="side-menu-header">
+      <img src="{{ url_for('static', filename='img/top right logo.png') }}" alt="Logo" class="menu-logo">
+      <!--<span class="close-btn" onclick="toggleMenu()">×</span>-->
+    </div>
+    <ul class="side-menu-links">
+      <li>
+        <span class="user-info-text custom-style">
+  {{ current_user.name|title }} <br> 
+  <span data-en="Credits" data-ar="الأرصدة">Credits</span> : {{ listings_count }}
+</span><br>
+
+  <a href="{{ url_for('subscriptions') }}" onclick="toggleMenu()" data-en="Packages" data-ar="الباقات">
+    Packages
+  </a>
+</li>
+<li>
+  <a href="{{ url_for('contactus') }}" onclick="toggleMenu()" data-en="Contact Us" data-ar="اتصل بنا">
+    Contact Us
+  </a>
+</li>
+<li>
+  <a href="{{ url_for('aboutus') }}" onclick="toggleMenu()" data-en="About Us" data-ar="معلومات عنا">
+    About Us
+  </a>
+</li>
+
+      {% if current_user.is_authenticated %}
+  <li>
+    <a href="{{ url_for('profile_panel') }}" onclick="toggleMenu()" data-en="Profile" data-ar="الملف الشخصي">
+      Profile
+    </a>
+  </li>
+{% else %}
+  <li>
+    <a href="{{ url_for('login') }}" onclick="toggleMenu()" data-en="Login" data-ar="تسجيل الدخول">
+      Login
+    </a>
+  </li>
+{% endif %}
+      <li class="language-switcher-container">
+  <div class="language-toggle">
+  <button id="sidebar-lang-en" class="language-btn" onclick="changeLanguage('en')">
+    <img src="{{ url_for('static', filename='img/download (2).png') }}" alt="">
+  </button>
+  <button id="sidebar-lang-ar" class="language-btn" onclick="changeLanguage('ar')">
+    <img src="{{ url_for('static', filename='img/Flag-Saudi-Arabia.webp') }}" alt="">
+  </button>
+</div>
+
+
+
+    </ul>
+    
+  </div>
+
+  <!-- Overlay for when menu is open -->
+  <div id="menuOverlay" class="menu-overlay" onclick="toggleMenu()"></div>
+</div>
+  <main>
+    <div class="container">
+      <!-- Hero Section -->
+      <div class="hero">
+        <img src="{{ url_for('static', filename='img/top right logo.png') }}" alt="Welcome to Dealify">
+        <h1 data-en="Welcome to Dealify" data-ar="مرحبًا بكم في ديلفاي">Welcome to Dealify</h1>
+        <p data-en="The UAE’s premier marketplace where simplicity meets security." data-ar="السوق الرائد في الإمارات حيث تلتقي البساطة بالموثوقية">The UAE’s premier marketplace where simplicity meets security.</p>
+      </div>
+
+      <!-- About Us Section -->
+      <div class="section">
+        <h2 data-en="About Us" data-ar="معلومات عنا">About Us</h2>
+        <p data-en=" At Dealify, we believe buying and selling should be simple, secure, and meaningful. As a UAE-based platform, our goal is to create a trusted space where individuals and businesses can connect through listings that go beyond transactions — turning every post into a potential partnership."
+           data-ar="في Dealify نؤمن أن البيع والشراء يجب أن يكون بسيطًا وآمنًا وذو معنى. بصفتنا منصة إماراتية، نهدف إلى إنشاء مساحة موثوقة تتيح للأفراد والشركات التواصل من خلال قوائم تتجاوز مجرد المعاملات – لتجعل كل إعلان فرصة شراكة">
+           Welcome to Dealify, the UAE’s premier marketplace where simplicity meets security. Whether you're buying or selling, we’re here to make every transaction effortless and rewarding.
+        </p>
+      </div>
+
+      <!-- Who We Are Section -->
+      <div class="section">
+        <h2 data-en="Who We Are" data-ar="من نحن">Who We Are</h2>
+        <p data-en="We are a secure online marketplace designed to serve everyone — from casual sellers to growing businesses — offering a reliable platform to list, discover, and connect.."
+           data-ar="نحن سوق إلكتروني آمن مصمم لخدمة الجميع – من البائعين الأفراد إلى الشركات الناشئة – من خلال توفير منصة موثوقة للنشر، والبحث، والتواصل">
+           At Dealify, we’re more than just a platform – we’re a growing community of buyers and sellers built on trust. Our goal is to empower individuals and businesses with a secure space to connect, trade, and thrive with confidence.
+        </p>
+      </div>
+
+      <!-- Our Vision Section -->
+      <div class="section">
+        <h2 data-en="What we offer" data-ar="رؤيتنا">What we offer</h2>
+        <p data-en=" Dealify covers everything someone might think of: cars, electronics, fashion, properties, services, and more — all in one easy-to-use platform."
+           data-ar="يغطي Dealify كل ما قد تبحث عنه: سيارات، إلكترونيات، أزياء، عقارات، خدمات، وأكثر — في منصة سلسة وسهلة الاستخدام">
+           Dealify covers everything someone might think of: cars, electronics, fashion, properties, services, and more — all in one easy-to-use platform.
+        </p>
+      </div>
+
+      <!-- Our Mission Section -->
+      <div class="section">
+        <h2 data-en="Our Mission" data-ar="مهمتنا">Our Mission</h2>
+        <p><strong data-en="For Sellers:" data-ar="للبائعين:">For Sellers:</strong> <span data-en="An easy-to-use platform to showcase your products and services with maximum visibility." data-ar="منصة سهلة الاستخدام لعرض منتجاتك وخدماتك بأعلى درجة من الظهور">An easy-to-use platform to showcase your products and services with maximum visibility.</span></p>
+        <p><strong data-en="For Buyers:" data-ar="للمشترين:">For Buyers:</strong> <span data-en="A variety of verified listings and personalized experiences." data-ar="مجموعة متنوعة من القوائم الموثوقة وتجارب مخصصة">A variety of verified listings and personalized experiences.</span></p>
+        <p><strong data-en="For Everyone:" data-ar="للجميع:">For Everyone:</strong> <span data-en="A safe marketplace where trust is at the heart of every transaction." data-ar="سوق آمن ترتكز فيه الثقة في قلب كل صفقة">A safe marketplace where trust is at the heart of every transaction.</span></p>
+      </div>
+
+      <!-- Why Choose Us Section -->
+      <div class="section">
+        <h2 data-en="Why Choose Dealify?" data-ar="لماذا تختار ديلفاي؟">Why Choose Dealify?</h2>
+        <div class="why-choose">
+          <div class="card">
+            
+            <h3 data-en="Easy to Use" data-ar="سهل الاستخدام">Easy to Use</h3>
+            <p data-en="Post your listings or find what you need with a few simple clicks." data-ar="أنشئ قوائمك أو ابحث عما تحتاجه ببضع نقرات فقط">Post your listings or find what you need with a few simple clicks.</p>
+          </div>
+          <div class="card">
+            
+            <h3 data-en="Secure Transactions" data-ar="معاملات آمنة">Secure Transactions</h3>
+            <p data-en="Worried about scams? Pay through Dealify, and we’ll ensure seamless transactions." data-ar="هل تقلق من الاحتيال؟ ادفع عبر Dealify وسنضمن معاملات سلسة">Worried about scams? Pay through Dealify, and we’ll ensure seamless transactions.</p>
+          </div>
+          <div class="card">
+          
+            <h3 data-en="Community First" data-ar="المجتمع أولاً">Community First</h3>
+            <p data-en="We’re dedicated to supporting connections and commerce in the UAE." data-ar="ملتزمون بدعم الروابط والتجارة في الإمارات">We’re dedicated to supporting connections and commerce in the UAE.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Why We Charge Section -->
+      <div class="section">
+        <h2 data-en="Our Listing System" data-ar="لماذا نفرض رسومًا على القوائم؟">Why Do We Charge for Listings?</h2>
+        <p data-en=" We use a unique credit-based system. Our packages start from AED 10, which includes 1 credit and allows you to post 2 listings. One listing = 0.5 credit for most categories, while others vary (e.g., Cars: 6 credits, Properties: 12 credits). Buy more credits at once and save — check the Packages page for more info"
+           data-ar="نستخدم نظامًا فريدًا قائمًا على الرصيد. تبدأ باقاتنا من 10 دراهم شاملًا رصيدًا واحدًا يسمح لك بنشر إعلانين. يعادل الإعلان الواحد 0.5 رصيد لمعظم الفئات، أما فئات أخرى فلها نسب مختلفة (مثل السيارات: 6 أرصدة، العقارات: 12 رصيدًا). احصل على أرصدة أكثر دفعة واحدة لتوفير أكبر — راجع صفحة الباقات للمزيد">
+           We use a unique credit-based system. Our packages start from AED 10, which includes 1 credit and allows you to post 2 listings. One listing = 0.5 credit for most categories, while others vary (e.g., Cars: 6 credits, Properties: 12 credits). Buy more credits at once and save — check the Packages page for more info
+        </p>
+   
+      </div>
+
+      <!-- Join Us Section -->
+      <div class="join-us">
+        <h2 data-en="Join Us Today" data-ar="انضم إلينا اليوم">Join Us Today</h2>
+        <p data-en="Experience a smarter, safer way to buy and sell. Start your journey with Dealify – where your deals come to life!"
+           data-ar="اختبر طريقة أذكى وأكثر أمانًا للشراء والبيع. ابدأ رحلتك مع Dealify – حيث تتحقق صفقاتك">
+           Experience a smarter, safer way to buy and sell. Start your journey with Dealify – where your deals come to life!
+        </p>
+        <a href="{{ url_for('signup') }}" data-en="Get Started" data-ar="ابدأ الآن">Get Started</a>
+      </div>
+    </div>
+  </main>
+  <footer>
+    <div class="footer-container">
+      <!-- Left Section: Logo -->
+      <div class="footer-logo">
+        <img src="{{ url_for('static', filename='img/footer logo.png') }}" alt="Dealify UAE Logo">
+      </div>
+
+      <!-- Center Section: Links -->
+      <div class="footer-links">
+        <div>
+          
+        </div>
+        <div> 
+          <ul>
+            <li>
+  <a href="{{ url_for('terms') }}" data-en="Terms & Conditions" data-ar="الشروط والأحكام">
+    Terms & Conditions
+  </a>
+</li>
+<li>
+  <a href="{{ url_for('privacy') }}" data-en="Privacy Policy" data-ar="سياسة الخصوصية">
+    Privacy Policy
+  </a>
+</li>
+
+          </ul>
+        </div>
+      </div>
+
+      <!-- Right Section: Social Icons -->
+      <div class="social-icons">
+        <a href="https://www.facebook.com/profile.php?id=61571835762109" target="_blank">
+          <img src="{{ url_for('static', filename='img/fb.png') }}" alt="Facebook">
+        </a>
+        <a href="https://www.instagram.com/dealifyuae/" target="_blank">
+          <img src="{{ url_for('static', filename='img/icons8-instagram-480[1].png') }}" alt="Instagram">
+        </a>
+        <a href="https://x.com/dealifyuae" target="_blank">
+          <img src="{{ url_for('static', filename='img/twitter.png') }}" alt="Twitter (X)">
+        </a>
+        <a href="https://www.tiktok.com/@dealifyuae?_t=8sM1rqyTtns&_r=1" class="tiktok" target="_blank">
+          <img
+            src="{{ url_for('static', filename='img/tiktok-round-white-icon.png') }}"
+            alt="TikTok">
+        </a>
+        <a href="https://wa.me/message/OIT32JOSRVQCL1" target="_blank">
+          <img src="{{ url_for('static', filename='img/733641.png') }}" alt="WhatsApp">
+        </a>
+        <a href="mailto:info@dealify.ae">
+          <img src="{{ url_for('static', filename='img/666162.png') }}" alt="Email">
+        </a>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+     <p data-en="Copyright © 2025 Dealify UAE" data-ar="© 2025 دياليفاي الإمارات جميع الحقوق محفوظة">
+  Copyright © 2025 Dealify UAE
+</p>
+
+<p data-en="Powered by @Tech Crafts." data-ar="@Tech Crafts بدعم من">
+  Powered by @Tech Crafts
+</p>
+
+<p data-en="@Licensed by DED DUBAI." data-ar="مرخص من قبل اقتصادية دبي @">
+  @Licensed by DED DUBAI
+</p>
+
+    </div>
+  </footer>
+    <script src="{{ url_for('static', filename='js/navscript.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/about-us.js') }}"></script>
+</body>
+</html>

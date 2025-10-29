@@ -1,0 +1,313 @@
+/* General Styles */
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: white;
+  color: #333;
+ /* background-image: url('../img/Visual identity  Dealify-01_page-0004.jpg');*/
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  overflow-x: hidden;
+  height: 100%;
+}
+
+
+
+*:not(.navbar):not(.navbar *):not(.offer-bar):not(.offer-bar *) {
+    box-sizing: border-box;
+}
+  
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: transparent !important;  /* Transparent background */
+  padding: 10px 20px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 999;
+  box-sizing: border-box;
+  border-bottom: none !important;
+  box-shadow: none !important;
+}
+
+/* Back Button */
+.back-btn img {
+  height: 30px;
+  filter: brightness(0) saturate(100%) invert(50%) sepia(90%) saturate(600%) hue-rotate(150deg); /* turns white icon blue */
+}
+.navbar,
+.navbar * {
+  color: #0cc4e9 !important; /* Force Dealify blue */
+}
+
+.nav-links a,
+.nav-links a:visited,
+.navbar-end span,
+.navbar-end a,
+.dropdown-icon {
+  color: #0cc4e9 !important;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+
+/* Center nav links */
+.nav-center {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 24px;
+}
+
+.nav-center a,
+.nav-links a {
+  color: #0cc4e9;
+  font-weight: bold;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+/* User Info */
+.navbar-end {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.navbar-end span,
+.navbar-end a,
+.navbar-end img {
+  color: #0cc4e9;
+}
+
+/* Dropdown Icon */
+.dropdown-icon {
+  color: #0cc4e9;
+}
+
+/* Optional: Mega Dropdown */
+.mega-dropdown-content {
+  background-color: #f5f5f5;
+  border: 1px solid #ccc;
+}
+
+.mega-dropdown-content a {
+  color: #0cc4e9;
+}
+
+
+  /* Contact Section */
+  .contact-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 50px;
+  }
+  
+  .contact-left {
+    flex: 1;
+    padding-right: 30px;
+  }
+  
+  .contact-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #00cfff;
+  }
+  
+  .contact-description {
+    font-size: 1rem;
+    color: #00cfff;
+    margin-top: 20px;
+    line-height: 1.6;
+  }
+  
+  .contact-right {
+    flex: 1.2;
+  }
+  
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  label {
+    display: block;
+    font-size: 1rem;
+    color: #00cfff;
+    margin-bottom: 8px;
+  }
+  
+  .name-fields {
+    display: flex;
+    gap: 15px;
+  }
+  
+  input[type="text"],
+  input[type="email"],
+  textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #00cfff;
+    border-radius: 5px;
+    font-size: 1rem;
+  }
+  
+  textarea {
+    resize: none;
+    height: 100px;
+  }
+  
+  .file-upload {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 60px;
+    border: 2px dashed #00cfff;
+    border-radius: 5px;
+    color: #00cfff;
+    cursor: pointer;
+    position: relative;
+  }
+  
+  .file-upload input[type="file"] {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+  }
+  
+  .file-upload span {
+    pointer-events: none;
+  }
+  
+.submit-btn {
+  background-color: #fa5391; /* main pink */
+  color: #fff;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 15px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.submit-btn:hover {
+  background-color: #e74e85; /* darker pink for hover */
+  transform: translateY(-2px);
+}
+
+  
+  /* Responsive Design */
+  @media screen and (max-width: 768px) {
+    .contact-section {
+      flex-direction: column;
+      align-items: center;
+      padding: 30px;
+    }
+  
+    .contact-left,
+    .contact-right {
+      flex: none;
+      width: 100%;
+      padding: 0;
+    }
+  
+    .name-fields {
+      flex-direction: column;
+    }
+  }
+#languageLabel #languageText {
+  color: white !important;
+  margin-left: 10px !important;
+  display: inline-block !important;
+}
+.language-switcher-container {
+  color: white !important;
+  padding-left: 30px !important; /* or margin-left */
+  cursor: pointer; /* move cursor pointer here if you want */
+  display: inline-block; /* if needed */
+  margin-top: 10px;
+}
+
+.page-slide-in {
+  animation: slideInRight 0.3s ease forwards;
+}
+
+.page-slide-out {
+  animation: slideOutLeft 0.3s ease forwards;
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideOutLeft {
+  from {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+}
+/* Change City Button Styles */
+.change-city-item {
+    border-top: 1px solid #e2e8f0;
+    margin-top: 10px;
+    padding-top: 10px;
+}
+
+.change-city-link {
+    display: block;
+    padding: 12px 20px;
+    background: #f8fafc;
+    color: #2d3748;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    border-radius: 8px;
+    margin: 0 10px;
+    text-align: center;
+}
+
+.change-city-link:hover {
+    background: #0cc4e9;
+    color: white;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(12, 196, 233, 0.3);
+}
+
+/* Mobile responsive adjustments */
+@media (max-width: 768px) {
+    .change-city-link {
+        padding: 10px 16px;
+        margin: 0 8px;
+        font-size: 0.95rem;
+    }
+}
+
+/* RTL support for Arabic */
+[dir="rtl"] .change-city-link {
+    text-align: center;
+}

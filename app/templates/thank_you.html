@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Thank You</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/thank_you.css', v='1.4.8') }}">
+</head>
+<body>
+  <div class="thank-you-box">
+  <h1 data-en="Thank you for your submission!" data-ar="!شكرًا لتقديمك">
+    Thank you for your submission!
+  </h1>
+
+  <p data-en="We’ve received your documents and will review them shortly - You’ll be notified once the verification is complete."
+     data-ar="لقد استلمنا مستنداتك وسنقوم بمراجعتها قريبًا - سيتم إعلامك بمجرد اكتمال عملية التوثيق">
+    We’ve received your documents and will review them shortly.<br>
+    You’ll be notified once the verification is complete.
+  </p>
+
+  <div class="button-group" style="margin-top: 30px;">
+    <a href="javascript:history.back()" class="thank-you-btn back" 
+       data-en="Go Back" data-ar="رجوع">Go Back</a>
+    <a href="/" class="thank-you-btn home" 
+       data-en="Home" data-ar="الرئيسية">Home</a>
+  </div>
+</div>
+  
+
+<script src="{{ url_for('static', filename='js/thank_you.js') }}"></script>
+</body>
+</html>
+
+

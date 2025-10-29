@@ -1,0 +1,184 @@
+body {
+    margin: 0;
+    padding-left: env(safe-area-inset-left, 16px);
+    padding-right: env(safe-area-inset-right, 16px);
+    background-color: #0cc4e9;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+    .page-wrapper {
+    width: 100%;
+    padding: 2rem 1rem;
+    padding-left: env(safe-area-inset-left, 16px);
+    padding-right: env(safe-area-inset-right, 16px);
+    padding-top: env(safe-area-inset-top, 16px);
+    padding-bottom: env(safe-area-inset-bottom, 16px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    box-sizing: border-box;
+  }
+  
+  .form-container {
+    background: #ffffff;
+    padding: 30px 24px;
+    border-radius: 20px;
+    width: 100%; /* stretch within the padded area */
+    max-width: 400px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    box-sizing: border-box;
+    margin: 0 auto;
+  }
+  
+      padding: 2rem 1.5rem;
+  @media (max-width: 400px) {
+    padding: 2rem 1rem;
+  }
+  
+      .form-container h2 {
+        color: #0cc4e9;
+        margin-bottom: 24px;
+        font-size: 24px;
+      }
+  
+      input[type="text"],
+      input[type="email"],
+      input[type="tel"],
+      select {
+        width: 100%;
+        padding: 14px 18px;
+        margin-bottom: 16px;
+        border: 1px solid #ccc;
+        background-color: #f5f5f5;
+        color: #333;
+        border-radius: 999px;
+        font-size: 15px;
+        outline: none;
+        transition: border-color 0.3s ease;
+        appearance: none;
+      }
+  
+      input:focus,
+      select:focus {
+        border-color: #0aaacb;
+        background-color: #fff;
+      }
+  
+      button {
+        width: 100%;
+        padding: 14px;
+        background-color: #0cc4e9;
+        color: #fff;
+        font-size: 16px;
+        font-weight: 600;
+        border: none;
+        border-radius: 999px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+  
+      button:hover {
+        background-color: #0aaacb;
+      }
+  
+      select {
+        font-family: 'Poppins', sans-serif;
+        font-weight: 500;
+      }
+  
+      option {
+        color: #333;
+      }
+      
+      input[type="text"],
+      input[type="email"],
+      input[type="tel"],
+      select {
+    width: 100%;
+    padding: 14px 18px;
+    margin-bottom: 16px;
+    border: 1px solid #ccc;
+    background-color: #f5f5f5;
+    color: #333;
+    border-radius: 999px;
+    font-size: 15px;
+    box-sizing: border-box;
+    outline: none;
+    transition: border-color 0.3s ease;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    height: 48px; /* ⬅️ make it exactly same height */
+    line-height: 1.5;
+  }
+  
+  select {
+    padding-left: 18px; /* ⬅️ to match input indent */
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    background-position: right 12px center;
+    background-repeat: no-repeat;
+    background-image: url('data:image/svg+xml;charset=US-ASCII,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"><polygon points="4,6 12,6 8,10" fill="%23999"/></svg>');
+    background-size: 12px;
+    cursor: pointer;
+  }
+  .flash-messages {
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .flash {
+    padding: 12px 18px;
+    border-radius: 999px;
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 10px;
+  }
+  
+  .flash-danger {
+    background-color: #ffe5ea;
+    color: #fa5391;
+    border: 1px solid #fa5391;
+  }
+  
+  .flash-success {
+    background-color: #e1f7eb;
+    color: #009a5c;
+    border: 1px solid #009a5c;
+  }
+  
+      .page-slide-in {
+    animation: slideInRight 0.3s ease forwards;
+  }
+  
+  .page-slide-out {
+    animation: slideOutLeft 0.3s ease forwards;
+  }
+  
+  @keyframes slideInRight {
+    from {
+      opacity: 0;
+      transform: translateX(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  @keyframes slideOutLeft {
+    from {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    to {
+      opacity: 0;
+      transform: translateX(-30px);
+    }
+  }
