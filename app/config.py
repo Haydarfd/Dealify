@@ -13,7 +13,7 @@ class Config:
     # Database
     SQLALCHEMY_DATABASE_URI = os.getenv(
         'DATABASE_URI',
-        'postgresql://postgres:postgre@69.62.113.129:5432/Dealify'
+        'postgresql://postgres:postgre@link'
     )
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     
@@ -35,13 +35,13 @@ class Config:
     MAIL_SERVER = 'smtp.gmail.com'
     MAIL_PORT = 465
     MAIL_USERNAME = 'dealifyuae@gmail.com'
-    MAIL_PASSWORD = os.getenv('MAIL_PASSWORD', 'rxwehbucssikmmex')
+    MAIL_PASSWORD = os.getenv('MAIL_PASSWORD', 'pass')
     MAIL_USE_TLS = False
     MAIL_USE_SSL = True
     
     # Stripe
     STRIPE_SECRET_KEY = os.getenv('STRIPE_SECRET_KEY')
-    STRIPE_WEBHOOK_SECRET = os.getenv('STRIPE_WEBHOOK_SECRET', 'whsec_W1a6j4PendMEPsiYt5q3kiRMAG6pVUvq')
+    STRIPE_WEBHOOK_SECRET = os.getenv('STRIPE_WEBHOOK_SECRET', 'pass')
     
     # Apple
     APPLE_CLIENT_ID = os.getenv('APPLE_CLIENT_ID')
